@@ -1,6 +1,6 @@
-import { h } from 'vue';
 import { NButton } from 'naive-ui';
-import { t } from '../locales';
+import { h } from 'vue';
+import { $t } from '../locales';
 
 export function setupAppVersionNotification() {
   let isShow = false;
@@ -19,8 +19,8 @@ export function setupAppVersionNotification() {
     isShow = true;
 
     const n = window.$notification?.create({
-      title: t('system.updateTitle'),
-      content: t('system.updateContent'),
+      title: $t('system.updateTitle'),
+      content: $t('system.updateContent'),
       action() {
         return h('div', { style: { display: 'flex', justifyContent: 'end', gap: '12px', width: '325px' } }, [
           h(
@@ -30,7 +30,7 @@ export function setupAppVersionNotification() {
                 n?.destroy();
               }
             },
-            () => t('system.updateCancel')
+            () => $t('system.updateCancel')
           ),
           h(
             NButton,
@@ -40,7 +40,7 @@ export function setupAppVersionNotification() {
                 location.reload();
               }
             },
-            () => t('system.updateConfirm')
+            () => $t('system.updateConfirm')
           )
         ]);
       },

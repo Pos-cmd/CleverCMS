@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useSvgIcon } from '@/composables/web/useSvgIcon'
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useTabStore } from '@/stores/modules/tab'
 import type { VNode } from 'vue'
 import { computed } from 'vue'
@@ -40,27 +40,27 @@ const options = computed(() => {
   const opts: DropdownOption[] = [
     {
       key: 'closeCurrent',
-      label: t('dropdown.closeCurrent'),
+      label: $t('dropdown.closeCurrent'),
       icon: SvgIconVNode({ icon: 'ph:x-bold', fontSize: 18 }),
     },
     {
       key: 'closeOther',
-      label: t('dropdown.closeOther'),
+      label: $t('dropdown.closeOther'),
       icon: SvgIconVNode({ icon: 'ph:arrows-out-line-horizontal-bold', fontSize: 18 }),
     },
     {
       key: 'closeLeft',
-      label: t('dropdown.closeLeft'),
+      label: $t('dropdown.closeLeft'),
       icon: SvgIconVNode({ icon: 'ph:arrow-line-left-bold', fontSize: 18 }),
     },
     {
       key: 'closeRight',
-      label: t('dropdown.closeRight'),
+      label: $t('dropdown.closeRight'),
       icon: SvgIconVNode({ icon: 'ph:arrow-line-right-bold', fontSize: 18 }),
     },
     {
       key: 'closeAll',
-      label: t('dropdown.closeAll'),
+      label: $t('dropdown.closeAll'),
       icon: SvgIconVNode({ icon: 'ph:minus-bold', fontSize: 18 }),
     },
   ]

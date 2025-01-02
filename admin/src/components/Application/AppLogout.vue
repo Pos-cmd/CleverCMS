@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { PopoverPlacement } from 'naive-ui'
-import { t } from '@/locales'
+import { $t } from '@/locales';
+import type { PopoverPlacement } from 'naive-ui';
 
 defineOptions({ name: 'AppLogout' })
 
@@ -32,7 +32,7 @@ const tooltipContent = computed(() => {
   if (!props.showTooltip)
     return ''
 
-  return t('icon.logout')
+  return $t('icon.logout')
 })
 </script>
 

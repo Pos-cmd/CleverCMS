@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouterPush } from '@/composables/web/useRouterPush'
 import { useSvgIcon } from '@/composables/web/useSvgIcon'
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useAuthStore } from '@/stores/modules/auth'
 import type { VNode } from 'vue'
 import { computed } from 'vue'
@@ -30,7 +30,7 @@ type DropdownOption =
 const options = computed(() => {
   const opts: DropdownOption[] = [
     {
-      label: t('icon.logout'),
+      label: $t('icon.logout'),
       key: 'logout',
       icon: SvgIconVNode({ icon: 'ph:sign-out-bold', fontSize: 18 }),
     },
@@ -52,7 +52,7 @@ function handleDropdown(key: DropdownKey) {
 
 <template>
   <NButton v-if="!userStore.getToken" quaternary @click="toLogin()">
-    {{ t('sys.loginOrRegister') }}
+    {{ $t('sys.loginOrRegister') }}
   </NButton>
   <NDropdown v-else placement="bottom" trigger="click" :options="options" @select="handleDropdown">
     <div>

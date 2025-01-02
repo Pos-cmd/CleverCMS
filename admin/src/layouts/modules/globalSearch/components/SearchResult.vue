@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { t } from '@/locales';
+import { $t } from '@/locales';
 import { useThemeStore } from '@/stores/modules/theme';
 
 defineOptions({ name: 'SearchResult' })
@@ -44,7 +44,7 @@ function handleTo() {
         >
           <component :is="item.icon" />
           <span class="ml-5px flex-1">
-            {{ (item.i18nKey && t(item.i18nKey)) || item.label }}
+            {{ (item.i18nKey && $t(item.i18nKey)) || item.label }}
           </span>
           <i-ph-key-return-bold class="icon mr-3px p-2px text-20px" />
         </div>

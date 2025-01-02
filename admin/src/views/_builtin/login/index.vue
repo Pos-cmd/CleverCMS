@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { FormItemRule } from 'naive-ui'
 import { useFormRules, useNaiveForm } from '@/composables/web/useFormRules'
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { LoginParams } from '@/services/api/auth/types'
 import { useAuthStore } from '@/stores/modules/auth'
+import { FormItemRule } from 'naive-ui'
 
 defineOptions({
   name: 'LoginPage',
@@ -48,11 +48,11 @@ async function handleSubmit() {
       </div>
       <p>
         <a rel="noreferrer" href="https://github.com/pos-cmd/vue-starter" target="_blank">
-          {{ t('system.title') }}
+          {{ $t('system.title') }}
         </a>
       </p>
       <p>
-        <em class="text-sm opacity-75">{{ t('sys.app.desc') }}</em>
+        <em class="text-sm opacity-75">{{ $t('sys.app.desc') }}</em>
       </p>
   
       <div class="py-4" />
@@ -66,11 +66,11 @@ async function handleSubmit() {
           size="large"
           class="text-center w-250px!"
         >
-          <NFormItem :label="t('sys.login.email')" path="email">
-            <NInput v-model:value="loginParams.email" :placeholder="t('sys.login.emailPlaceholder')" />
+          <NFormItem :label="$t('sys.login.email')" path="email">
+            <NInput v-model:value="loginParams.email" :placeholder="$t('sys.login.emailPlaceholder')" />
           </NFormItem>
-          <NFormItem :label="t('sys.login.password')" path="password">
-            <NInput v-model:value="loginParams.password" show-password-on="mousedown" :placeholder="t('sys.login.passwordPlaceholder')" type="password" />
+          <NFormItem :label="$t('sys.login.password')" path="password">
+            <NInput v-model:value="loginParams.password" show-password-on="mousedown" :placeholder="$t('sys.login.passwordPlaceholder')" type="password" />
           </NFormItem>
         </NForm>
       </NSpace>
@@ -82,7 +82,7 @@ async function handleSubmit() {
           :disabled="(!loginParams?.email && !loginParams?.password)"
           @click="handleSubmit"
         >
-          {{ t('sys.login.loginButton') }}
+          {{ $t('sys.login.loginButton') }}
         </n-button>
       </div>
       <TheFooter />

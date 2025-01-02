@@ -1,4 +1,4 @@
-import { createDiscreteApi } from 'naive-ui'
+import { $t } from '@/locales'
 import type {
   ConfigProviderProps,
   DialogApi,
@@ -8,7 +8,7 @@ import type {
   NotificationApi,
   NotificationOptions,
 } from 'naive-ui'
-import { t } from '@/locales'
+import { createDiscreteApi } from 'naive-ui'
 
 interface MessageOpt {
   loadingBar: LoadingBarApi
@@ -42,10 +42,10 @@ export default function useDiscreteApi(props?: ConfigProviderProps) {
         loadingBar,
         message,
         notification: createNotification(notification, { duration: 3000 }),
-        dialog: createDialog(dialog, { positiveText: t('common.okText') }),
+        dialog: createDialog(dialog, { positiveText: $t('common.okText') }),
         confirm: createDialog(dialog, {
-          positiveText: t('common.okText'),
-          negativeText: t('common.cancelText'),
+          positiveText: $t('common.okText'),
+          negativeText: $t('common.cancelText'),
         }),
         destroyAllDialog: dialog.destroyAll,
         destroyAllNotification: notification.destroyAll,

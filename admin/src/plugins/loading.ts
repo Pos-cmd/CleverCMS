@@ -1,6 +1,6 @@
 // @unocss-include
 import systemLogo from '@/assets/svg-icon/logo.svg?raw';
-import { t } from '@/locales';
+import { $t } from '@/locales';
 import { localStg } from '@/utils/storage';
 import { getRgb } from '@clever/color';
 
@@ -34,7 +34,7 @@ export function setupLoading() {
       ${dot}
     </div>
   </div>
-  <h2 class="text-28px font-500 text-#646464">${t('system.title')}</h2>
+  <h2 class="text-28px font-500 text-#646464">${$t('system.title')}</h2>
 </div>`;
 
   const app = document.getElementById('app');

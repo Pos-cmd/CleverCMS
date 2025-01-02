@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { PopoverPlacement } from 'naive-ui'
-import { t } from '@/locales'
+import { $t } from '@/locales';
+import type { PopoverPlacement } from 'naive-ui';
+import { computed } from 'vue';
 
 defineOptions({ name: 'AppThemeToggle' })
 
@@ -41,7 +41,7 @@ const tooltipContent = computed(() => {
   if (!props.showTooltip)
     return ''
 
-  return t('icon.themeSchema')
+  return $t('icon.themeSchema')
 })
 </script>
 

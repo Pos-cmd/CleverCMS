@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouterPush } from '@/composables/web/useRouterPush'
 import { GLOBAL_SIDER_MENU_ID } from '@/constants/app'
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useAppStore } from '@/stores/modules/app'
 import { useRouteStore } from '@/stores/modules/route'
 import { useThemeStore } from '@/stores/modules/theme'
@@ -108,7 +108,7 @@ watch(
         >
           <header class="flex-y-center justify-between px-12px" :style="{ height: `${themeStore.header.height}px` }">
             <h2 class="text-16px text-primary font-bold">
-              {{ t('system.title') }}
+              {{ $t('system.title') }}
             </h2>
             <PinToggler
               :pin="appStore.mixSiderFixed"

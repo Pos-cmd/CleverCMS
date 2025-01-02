@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useAppStore } from '@/stores/modules/app'
 import { useRouteStore } from '@/stores/modules/route'
 import { onKeyStroke, useDebounceFn } from '@vueuse/core'
@@ -27,7 +27,7 @@ const visible = defineModel<boolean>('show', { required: true })
 function search() {
   resultOptions.value = routeStore.searchMenus.filter((menu) => {
     const trimKeyword = keyword.value.toLocaleLowerCase().trim()
-    const title = (menu.i18nKey ? t(menu.i18nKey) : menu.label).toLocaleLowerCase()
+    const title = (menu.i18nKey ? $t(menu.i18nKey) : menu.label).toLocaleLowerCase()
     return trimKeyword && title.includes(trimKeyword)
   })
   activePath.value = resultOptions.value[0]?.routePath ?? ''
@@ -107,18 +107,18 @@ registerShortcut()
     @after-leave="handleClose"
   >
     <NInputGroup>
-      <NInput v-model:value="keyword" clearable :placeholder="t('common.keywordSearch')" @input="handleSearch">
+      <NInput v-model:value="keyword" clearable :placeholder="$t('common.keywordSearch')" @input="handleSearch">
         <template #prefix>
           <i-ph-magnifying-glass-bold class="text-15px text-#c2c2c2" />
         </template>
       </NInput>
       <NButton v-if="isMobile" type="primary" ghost @click="handleClose">
-        {{ t('common.cancel') }}
+        {{ $t('common.cancel') }}
       </NButton>
     </NInputGroup>
 
     <div class="mt-20px">
-      <NEmpty v-if="resultOptions.length === 0" :description="t('common.noData')" />
+      <NEmpty v-if="resultOptions.length === 0" :description="$t('common.noData')" />
       <SearchResult v-else v-model:path="activePath" :options="resultOptions" @enter="handleEnter" />
     </div>
     <template #footer>

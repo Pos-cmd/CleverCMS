@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useAppStore } from '@/stores/modules/app'
 import { useThemeStore } from '@/stores/modules/theme'
 import LayoutModeCard from '../components/LayoutModeCard.vue'
@@ -18,7 +18,7 @@ function handleReverseHorizontalMixChange(value: boolean) {
 </script>
 
 <template>
-  <NDivider>{{ t('theme.layoutMode.title') }}</NDivider>
+  <NDivider>{{ $t('theme.layoutMode.title') }}</NDivider>
   <LayoutModeCard v-model:mode="themeStore.layout.mode" :disabled="appStore.isMobile">
     <template #vertical>
       <div class="layout-sider h-full w-18px" />
@@ -51,7 +51,7 @@ function handleReverseHorizontalMixChange(value: boolean) {
   </LayoutModeCard>
   <SettingItem
     v-if="themeStore.layout.mode === 'horizontal-mix'"
-    :label="t('theme.layoutMode.reverseHorizontalMix')"
+    :label="$t('theme.layoutMode.reverseHorizontalMix')"
     class="mt-16px"
   >
     <NSwitch :value="themeStore.layout.reverseHorizontalMix" @update:value="handleReverseHorizontalMixChange" />

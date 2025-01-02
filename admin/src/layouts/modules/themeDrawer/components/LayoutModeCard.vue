@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { PopoverPlacement } from 'naive-ui'
-import { themeLayoutModeRecord } from '@/constants/app'
-import { t } from '@/locales'
+import { themeLayoutModeRecord } from '@/constants/app';
+import { $t } from '@/locales';
+import type { PopoverPlacement } from 'naive-ui';
 
 defineOptions({
   name: 'LayoutModeCard',
@@ -86,7 +86,7 @@ function handleChangeMode(mode: UnionKey.ThemeLayoutMode) {
             <slot :name="key" />
           </div>
         </template>
-        {{ t(themeLayoutModeRecord[key]) }}
+        {{ $t(themeLayoutModeRecord[key]) }}
       </NTooltip>
     </div>
   </div>

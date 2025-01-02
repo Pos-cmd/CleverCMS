@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { themeSchemaRecord } from '@/constants/app'
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useThemeStore } from '@/stores/modules/theme'
 import { computed } from 'vue'
 import SettingItem from '../components/SettingItem.vue'
@@ -29,7 +29,7 @@ const showSiderInverted = computed(() => !themeStore.darkMode && themeStore.layo
 </script>
 
 <template>
-  <NDivider>{{ t('theme.themeSchema.title') }}</NDivider>
+  <NDivider>{{ $t('theme.themeSchema.title') }}</NDivider>
   <div class="flex-col-stretch gap-16px">
     <div class="i-flex-center">
       <NTabs
@@ -46,11 +46,11 @@ const showSiderInverted = computed(() => !themeStore.darkMode && themeStore.layo
       </NTabs>
     </div>
     <Transition name="sider-inverted">
-      <SettingItem v-if="showSiderInverted" :label="t('theme.sider.inverted')">
+      <SettingItem v-if="showSiderInverted" :label="$t('theme.sider.inverted')">
         <NSwitch v-model:value="themeStore.sider.inverted" />
       </SettingItem>
     </Transition>
-    <SettingItem :label="t('theme.grayscale')">
+    <SettingItem :label="$t('theme.grayscale')">
       <NSwitch :value="themeStore.grayscale" @update:value="handleGrayscaleChange" />
     </SettingItem>
   </div>

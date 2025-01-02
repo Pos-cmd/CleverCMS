@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useThemeStore } from '@/stores/modules/theme'
 import Clipboard from 'clipboard'
 import { computed, onMounted, ref } from 'vue'
@@ -19,7 +19,7 @@ function initClipboard() {
   const clipboard = new Clipboard(domRef.value)
 
   clipboard.on('success', () => {
-    window.$toast?.success(t('theme.configOperation.copySuccessMsg'))
+    window.$toast?.success($t('theme.configOperation.copySuccessMsg'))
   })
 }
 
@@ -35,7 +35,7 @@ function handleReset() {
   themeStore.resetStore()
 
   setTimeout(() => {
-    window.$toast?.success(t('theme.configOperation.resetSuccessMsg'))
+    window.$toast?.success($t('theme.configOperation.resetSuccessMsg'))
   }, 50)
 }
 
@@ -50,11 +50,11 @@ onMounted(() => {
   <div class="w-full flex justify-between">
     <textarea id="themeConfigCopyTarget" v-model="dataClipboardText" class="absolute opacity-0 -z-1" />
     <NButton type="error" ghost @click="handleReset">
-      {{ t('theme.configOperation.resetConfig') }}
+      {{ $t('theme.configOperation.resetConfig') }}
     </NButton>
     <div ref="domRef" data-clipboard-target="#themeConfigCopyTarget">
       <NButton type="primary">
-        {{ t('theme.configOperation.copyConfig') }}
+        {{ $t('theme.configOperation.copyConfig') }}
       </NButton>
     </div>
   </div>

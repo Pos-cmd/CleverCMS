@@ -2,7 +2,7 @@ import type { IUser } from '#/model'
 import { useRouterPush } from '@/composables/web/useRouterPush'
 import type { RoleEnum } from '@/enums/role'
 import { SetupStoreId } from '@/enums/store'
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { API } from '@/services/api'
 import { LoginParams } from '@/services/api/auth/types'
 import { store } from '@/stores'
@@ -163,10 +163,10 @@ export const useAuthStore = defineStore(SetupStoreId.User,{
      */
     confirmLoginOut() {
       window.$dialog?.warning({
-        title: t('sys.app.logoutTip'),
-        content: t('sys.app.logoutMessage'),
-        positiveText: t('button.yes'),
-        negativeText: t('button.back'),
+        title: $t('sys.app.logoutTip'),
+        content: $t('sys.app.logoutMessage'),
+        positiveText: $t('button.yes'),
+        negativeText: $t('button.back'),
         onPositiveClick: async () => {
           await this.logout(true)
         },

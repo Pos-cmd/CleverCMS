@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { t } from '@/locales'
+import { $t } from '@/locales';
+import { computed } from 'vue';
 
 defineOptions({
   name: 'AppLocalPicker',
@@ -29,7 +29,7 @@ const tooltipContent = computed(() => {
   if (!props.showTooltip)
     return ''
 
-  return t('icon.lang')
+  return $t('icon.lang')
 })
 
 function changeLang(lang: I18n.LangType) {

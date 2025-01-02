@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { t } from '@/locales'
-import { useRouterPush } from '@/composables/web/useRouterPush'
+import { useRouterPush } from '@/composables/web/useRouterPush';
+import { $t } from '@/locales';
+import { computed } from 'vue';
 
 defineOptions({ name: 'ExceptionBase' })
 
@@ -39,7 +39,7 @@ const icon = computed(() => iconMap[props.type])
       <SvgIcon :local-icon="icon" />
     </div>
     <NButton type="primary" @click="routerPushByKey('root')">
-      {{ t('common.backToHome') }}
+      {{ $t('common.backToHome') }}
     </NButton>
   </div>
 </template>

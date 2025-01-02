@@ -1,5 +1,5 @@
 import { useGlobSetting } from '@/composables/setting'
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useAuthStoreWithout } from '@/stores/modules/auth'
 import { deepMerge, setObjToUrlParams } from '@/utils'
 import { localStg } from '@/utils/storage'
@@ -36,7 +36,7 @@ const transform: AxiosTransform = {
     // Return an error if there is no data.
     const { data } = res
     if (!data) {
-      throw new Error(t('sys.api.apiRequestFailed'))
+      throw new Error($t('sys.api.apiRequestFailed'))
     }
 
     // Here code, result, message are fields standardized by the backend.
@@ -50,7 +50,7 @@ const transform: AxiosTransform = {
     const userStore = useAuthStoreWithout()
     switch (code) {
       case ResultEnum.TIMEOUT:
-        timeoutMsg = t('sys.api.timeoutMessage')
+        timeoutMsg = $t('sys.api.timeoutMessage')
         userStore.setToken(undefined)
         userStore.logout(true)
         break
@@ -60,13 +60,13 @@ const transform: AxiosTransform = {
     }
 
     if (options.errorMessageMode === 'modal') {
-      window?.$dialog?.error({ title: t('sys.api.errorTip'), content: timeoutMsg, positiveText: t('common.okText') })
+      window?.$dialog?.error({ title: $t('sys.api.errorTip'), content: timeoutMsg, positiveText: $t('common.okText') })
     }
     else if (options.errorMessageMode === 'message') {
       window?.$toast?.error(timeoutMsg)
     }
 
-    throw new Error(timeoutMsg || t('sys.api.apiRequestFailed'))
+    throw new Error(timeoutMsg || $t('sys.api.apiRequestFailed'))
   },
 
   /**
@@ -147,16 +147,16 @@ const transform: AxiosTransform = {
 
     try {
       if (code === 'ECONNABORTED' && message.includes('timeout')) {
-        errMessage = t('sys.api.apiTimeoutMessage')
+        errMessage = $t('sys.api.apiTimeoutMessage')
       }
 
       if (err?.includes('Network Error')) {
-        errMessage = t('sys.api.networkExceptionMsg')
+        errMessage = $t('sys.api.networkExceptionMsg')
       }
 
       if (errMessage) {
         if (errorMessageMode === 'modal') {
-          window?.$dialog?.error({ title: t('sys.api.errorTip'), content: errMessage , positiveText: t('common.okText')})
+          window?.$dialog?.error({ title: $t('sys.api.errorTip'), content: errMessage , positiveText: $t('common.okText')})
         }
         else if (errorMessageMode === 'message') {
           window?.$toast?.error(errMessage)

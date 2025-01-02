@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { t } from '@/locales'
+import { $t } from '@/locales';
 
 defineOptions({
   name: 'AppFullScreen',
@@ -13,7 +13,7 @@ interface Props {
 </script>
 
 <template>
-  <ButtonIcon :key="String(full)" :tooltip-content="full ? t('icon.fullscreenExit') : t('icon.fullscreen')">
+  <ButtonIcon :key="String(full)" :tooltip-content="full ? $t('icon.fullscreenExit') : $t('icon.fullscreen')">
     <i-ph-arrows-in-bold v-if="full" />
     <i-ph-arrows-out-bold v-else />
   </ButtonIcon>

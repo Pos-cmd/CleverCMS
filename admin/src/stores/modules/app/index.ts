@@ -5,7 +5,7 @@ import { effectScope, nextTick, onScopeDispose, ref, watch } from 'vue'
 // import { useRouteStore } from '../route'
 // import { useTabStore } from '../tab'
 import { SetupStoreId } from '@/enums/store'
-import { setLocale, t } from '@/locales'
+import { $t, setLocale } from '@/locales'
 import { setDateFnsLocale } from '@/plugins/date-fns'
 import { router } from '@/router'
 import { localStg } from '@/utils/storage'
@@ -71,7 +71,7 @@ export const useAppStore = defineStore(SetupStoreId.App, () => {
   function updateDocumentTitleByLocale() {
     const { i18nKey, title } = router.currentRoute.value.meta
 
-    const documentTitle: string = i18nKey ? t(i18nKey as string) : title as string
+    const documentTitle: string = i18nKey ? $t(i18nKey as string) : title as string
 
     useTitle(documentTitle)
   }

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { t } from '@/locales'
+import { $t } from '@/locales';
 
 defineOptions({ name: 'SearchFooter' })
 </script>
@@ -8,16 +8,16 @@ defineOptions({ name: 'SearchFooter' })
   <div class="h-44px flex-y-center gap-14px px-24px">
     <span class="flex-y-center">
       <i-ph-key-return-bold class="operate-shadow operate-item" />
-      <span>{{ t('common.confirm') }}</span>
+      <span>{{ $t('common.confirm') }}</span>
     </span>
     <span class="flex-y-center">
       <i-ph-arrow-up-bold class="operate-shadow operate-item" />
       <i-ph-arrow-down-bold class="operate-shadow operate-item" />
-      <span>{{ t('common.switch') }}</span>
+      <span>{{ $t('common.switch') }}</span>
     </span>
     <span class="flex-y-center">
       <i-mdi-keyboard-esc class="operate-shadow operate-item" />
-      <span>{{ t('common.close') }}</span>
+      <span>{{ $t('common.close') }}</span>
     </span>
   </div>
 </template>

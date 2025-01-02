@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { t } from '@/locales'
+import { $t } from '@/locales';
 
 defineOptions({
   name: 'AppReloadButton',
@@ -13,7 +13,7 @@ interface Props {
 </script>
 
 <template>
-  <ButtonIcon :tooltip-content="t('icon.reload')">
+  <ButtonIcon :tooltip-content="$t('icon.reload')">
     <i-ph-arrow-clockwise-bold :class="{ 'animate-spin animate-duration-750': loading }" />
   </ButtonIcon>
 </template>

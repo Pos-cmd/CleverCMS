@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useDesign } from '@/composables/web/useDesign'
-import { t } from '@/locales'
+import { $t } from '@/locales'
 import { useThemeStore } from '@/stores/modules/theme'
 import { getNaiveCssVars } from '@/stores/modules/theme/shared'
 import { colord } from '@clever/color'
@@ -53,7 +53,7 @@ useCssVars(() => {
                   <i-ph-caret-left-bold />
                 </n-icon>
               </template>
-              {{ t('button.back') }}
+              {{ $t('button.back') }}
             </n-button>
           </div>
           <slot name="left" />
