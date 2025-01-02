@@ -1,0 +1,129 @@
+{
+  "app": {
+    "searchNotData": "Aucun résultat de recherche pour le moment",
+    "toNavigate": "naviguer",
+    "toSearch": "rechercher"
+  },
+  "button": {
+    "back": "Retour",
+    "go": "Aller",
+    "reset": "Réinitialiser",
+    "save": "Sauvegarder",
+    "yes": "Oui"
+  },
+  "countdown": {
+    "normalText": "Obtenir le code SMS",
+    "sendText": "Nouvelle demande dans {0}s"
+  },
+  "cropper": {
+    "btn_reset": "Réinitialiser",
+    "btn_rotate_left": "Rotation antihoraire",
+    "btn_rotate_right": "Rotation horaire",
+    "btn_scale_x": "Retourner horizontalement",
+    "btn_scale_y": "Retourner verticalement",
+    "btn_zoom_in": "Zoomer",
+    "btn_zoom_out": "Dézoomer",
+    "modalTitle": "Téléchargement de l'avatar",
+    "okText": "Confirmer et télécharger",
+    "selectImage": "Sélectionner une image",
+    "uploadSuccess": "Téléchargement réussi !"
+  },
+  "drawer": {
+    "cancelText": "Fermer",
+    "loadingText": "Chargement...",
+    "okText": "Confirmer"
+  },
+  "excel": {
+    "exportModalTitle": "Exporter les données",
+    "fileName": "Nom du fichier",
+    "fileType": "Type de fichier"
+  },
+  "form": {
+    "apiSelectNotFound": "Veuillez attendre la fin du chargement des données...",
+    "maxTip": "Le nombre de caractères doit être inférieur à {0}",
+    "putAway": "Réduire",
+    "unfold": "Développer"
+  },
+  "icon": {
+    "copy": "Icône copiée avec succès !",
+    "placeholder": "Cliquez pour sélectionner une icône",
+    "search": "Rechercher une icône"
+  },
+  "menu": {
+    "search": "Rechercher dans le menu"
+  },
+  "modal": {
+    "cancelText": "Fermer",
+    "close": "Fermer",
+    "maximize": "Agrandir",
+    "okText": "Confirmer",
+    "restore": "Restaurer"
+  },
+  "table": {
+    "index": "Index",
+    "settingColumn": "Paramètres des colonnes",
+    "settingColumnShow": "Affichage des colonnes",
+    "settingDens": "Densité",
+    "settingDensDefault": "Par défaut",
+    "settingDensMiddle": "Moyenne",
+    "settingDensSmall": "Compacte",
+    "settingFixedLeft": "Fixer à gauche",
+    "settingFixedRight": "Fixer à droite",
+    "settingFullScreen": "Plein écran",
+    "settingIndexColumnShow": "Colonne d'index",
+    "settingSelectColumnShow": "Colonne de sélection",
+    "total": "Total : {total}"
+  },
+  "time": {
+    "after": " dans",
+    "before": " il y a",
+    "days": " jours",
+    "hours": " heures",
+    "just": "à l'instant",
+    "minutes": " minutes",
+    "seconds": " secondes"
+  },
+  "tree": {
+    "checkStrictly": "Association hiérarchique",
+    "checkUnStrictly": "Indépendance hiérarchique",
+    "expandAll": "Tout développer",
+    "selectAll": "Tout sélectionner",
+    "unExpandAll": "Tout réduire",
+    "unSelectAll": "Tout désélectionner"
+  },
+  "upload": {
+    "accept": "Format(s) accepté(s) : {0}",
+    "acceptUpload": "Formats de fichiers acceptés : {0}",
+    "choose": "Sélectionner un fichier",
+    "del": "Supprimer",
+    "download": "Télécharger",
+    "fileName": "Nom du fichier",
+    "fileSize": "Taille du fichier",
+    "fileStatue": "État du fichier",
+    "imgUpload": "Télécharger une image",
+    "legend": "Légende",
+    "maxNumber": "Nombre maximum de fichiers : {0}",
+    "maxSize": "Taille maximale par fichier : {0}MB",
+    "maxSizeMultiple": "Taille totale maximale : {0}MB",
+    "operating": "En cours",
+    "preview": "Aperçu",
+    "reUploadFailed": "Retélécharger les fichiers échoués",
+    "save": "Enregistrer",
+    "saveError": "Aucun fichier n'a été téléchargé avec succès, impossible d'enregistrer !",
+    "saveWarn": "Veuillez attendre la fin du téléchargement avant d'enregistrer !",
+    "startUpload": "Commencer le téléchargement",
+    "upload": "Télécharger",
+    "uploadError": "Échec du téléchargement",
+    "uploadSuccess": "Téléchargement réussi",
+    "uploadWait": "Veuillez attendre la fin du téléchargement",
+    "uploaded": "Téléchargé",
+    "uploading": "Téléchargement en cours"
+  },
+  "verify": {
+    "dragText": "Maintenez et faites glisser le curseur",
+    "error": "Échec de la vérification !",
+    "redoTip": "Cliquez sur l'image pour actualiser",
+    "successText": "Vérifié",
+    "time": "Vérification réussie en {time} secondes !"
+  }
+}

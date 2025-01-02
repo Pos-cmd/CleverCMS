@@ -1,0 +1,14 @@
+{
+  "name": "@clever/uno-preset",
+  "version": "1.2.1",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
+  }
+}

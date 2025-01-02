@@ -1,0 +1,22 @@
+{
+  "name": "@clever/materials",
+  "version": "1.2.1",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
+  },
+  "dependencies": {
+    "@clever/utils": "workspace:*",
+    "@clever/color": "workspace:*",
+    "simplebar-vue": "2.3.4"
+  },
+  "devDependencies": {
+    "typed-css-modules": "0.9.1"
+  }
+}

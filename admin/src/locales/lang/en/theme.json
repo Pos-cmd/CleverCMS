@@ -1,0 +1,86 @@
+{
+  "configOperation": {
+    "copyConfig": "Copy Configuration",
+    "copySuccessMsg": "Copy Successful, Please replace the variable \"themeSettings\" in \"src/theme/settings.ts\"",
+    "resetConfig": "Reset Configuration",
+    "resetSuccessMsg": "Reset Successful"
+  },
+  "fixedHeaderAndTab": "Fixed Header and Tab",
+  "footer": {
+    "fixed": "Fixed Footer",
+    "height": "Footer Height",
+    "right": "Footer on the Right",
+    "visible": "Footer Visible"
+  },
+  "grayscale": "Grayscale",
+  "header": {
+    "breadcrumb": {
+      "showIcon": "Visible Breadcrumbs Icon",
+      "visible": "Visible breadcrumbs"
+    },
+    "height": "Header Height"
+  },
+  "layoutMode": {
+    "horizontal": "Horizontal Menu Mode",
+    "horizontal-mix": "Horizontal Mixed Menu Mode",
+    "reverseHorizontalMix": "Reverse the position of top-level menus and child menus",
+    "title": "Layout Mode",
+    "vertical": "Vertical Menu Mode",
+    "vertical-mix": "Vertical Mixed Menu Mode"
+  },
+  "page": {
+    "animate": "Page Animation",
+    "mode": {
+      "fade": "Molten",
+      "fade-bottom": "Zoom from below",
+      "fade-scale": "Fade Scale",
+      "fade-slide": "Slip",
+      "none": "None",
+      "title": "Page Animation Mode",
+      "zoom-fade": "Zoom Fade",
+      "zoom-out": "Zoom out"
+    }
+  },
+  "pageFunTitle": "Page functionality",
+  "recommendColor": "Apply the Recommended Color Algorithm",
+  "recommendColorDesc": "The recommended color algorithm refers to",
+  "scrollMode": {
+    "content": "Content",
+    "title": "Scroll Mode",
+    "wrapper": "Envelope"
+  },
+  "sider": {
+    "collapsedWidth": "Reduced Sidebar Width",
+    "inverted": "Dark Sidebar",
+    "mixChildMenuWidth": "Mixed Children’s Menu Width",
+    "mixCollapsedWidth": "Reduced Width of the Mixed Side Bar",
+    "mixWidth": "Mixed Side Bar Width",
+    "width": "Sidebar Width"
+  },
+  "tab": {
+    "cache": "Tab Cache",
+    "height": "Tab Height",
+    "mode": {
+      "button": "Button",
+      "chrome": "Chromium",
+      "title": "Tab Mode"
+    },
+    "visible": "Visible tab"
+  },
+  "themeColor": {
+    "error": "Error",
+    "followPrimary": "Follow the Main",
+    "info": "Information",
+    "primary": "Main",
+    "success": "Success",
+    "title": "Theme Color",
+    "warning": "Warning"
+  },
+  "themeDrawerTitle": "Theme Configuration",
+  "themeSchema": {
+    "auto": "Follow the System",
+    "dark": "Dark",
+    "light": "Clear",
+    "title": "Theme Diagram"
+  }
+}

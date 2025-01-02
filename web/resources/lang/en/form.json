@@ -1,0 +1,35 @@
+{
+  "code": {
+    "invalid": "Verification code format is incorrect",
+    "required": "Please enter verification code"
+  },
+  "component": {
+    "collapse": "Reduce",
+    "expand": "Develop"
+  },
+  "confirmPwd": {
+    "invalid": "The two passwords are different",
+    "required": "Please enter the password again"
+  },
+  "email": {
+    "invalid": "Email format is incorrect",
+    "required": "Please enter email"
+  },
+  "phone": {
+    "invalid": "Phone number format is incorrect",
+    "required": "Please enter phone number"
+  },
+  "placeholder": {
+    "input": "Please enter",
+    "select": "Please select"
+  },
+  "pwd": {
+    "invalid": "6-18 characters, including letters, numbers and underscores",
+    "required": "Please enter password"
+  },
+  "required": "Cannot be empty",
+  "userName": {
+    "invalid": "Username format is incorrect",
+    "required": "Please enter username"
+  }
+}

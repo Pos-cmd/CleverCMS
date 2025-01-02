@@ -1,0 +1,51 @@
+{
+  "action": "Action",
+  "add": "Ajouter",
+  "addSuccess": "Ajout Réussi",
+  "backToHome": "Retour à l'accueil",
+  "batchDelete": "Suppression par lot",
+  "cancel": "Annuler",
+  "cancelText": "Annuler",
+  "check": "Vérifier",
+  "close": "Fermer",
+  "columnSetting": "Paramètre de la colonne",
+  "component": {
+    "button": {
+      "reset": "Réinitialiser"
+    }
+  },
+  "config": "Configuration",
+  "confirm": "Confirmer",
+  "confirmDelete": "Êtes-vous sûr de vouloir supprimer?",
+  "delete": "Supprimer",
+  "deleteSuccess": "Suppression Réussie",
+  "edit": "Éditer",
+  "error": "Erreur",
+  "expandColumn": "Développer la colonne",
+  "index": "Index",
+  "keywordSearch": "Veuillez entrer un mot-clé",
+  "logout": "Déconnexion",
+  "logoutConfirm": "Êtes-vous sûr de vouloir vous déconnecter?",
+  "lookForward": "À venir",
+  "modify": "Modifier",
+  "modifySuccess": "Modification Réussie",
+  "name": "nom",
+  "noData": "Aucune donnée",
+  "okText": "OK",
+  "operate": "Opérer",
+  "pleaseCheckValue": "Veuillez vérifier si la valeur est valide",
+  "refresh": "Rafraîchir",
+  "reset": "Réinitialiser",
+  "search": "Rechercher",
+  "switch": "Changer",
+  "tip": "Astuce",
+  "trigger": "Déclencher",
+  "update": "Mettre à jour",
+  "updateSuccess": "Mise à jour Réussie",
+  "userCenter": "Centre Utilisateur",
+  "warning": "Avertissement",
+  "yesOrNo": {
+    "no": "Non",
+    "yes": "Oui"
+  }
+}

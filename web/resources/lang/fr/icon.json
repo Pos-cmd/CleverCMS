@@ -1,0 +1,13 @@
+{
+  "collapse": "Réduire le Menu",
+  "expand": "Développer le Menu",
+  "fullscreen": "Plein Écran",
+  "fullscreenExit": "Quitter le Plein Écran",
+  "lang": "Changer de Langue",
+  "logout": "Déconnexion",
+  "pin": "Épingler",
+  "reload": "Recharger la Page",
+  "themeConfig": "Configuration du Thème",
+  "themeSchema": "Schéma du Thème",
+  "unpin": "Détacher"
+}

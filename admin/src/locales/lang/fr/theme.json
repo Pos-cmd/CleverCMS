@@ -1,0 +1,86 @@
+{
+    "configOperation": {
+      "copyConfig": "Copier la Configuration",
+      "copySuccessMsg": "Copie Réussie, Veuillez remplacer la variable \"themeSettings\" dans \"src/theme/settings.ts\"",
+      "resetConfig": "Réinitialiser la Configuration",
+      "resetSuccessMsg": "Réinitialisation Réussie"
+    },
+    "fixedHeaderAndTab": "En-tête et Onglet Fixes",
+    "footer": {
+      "fixed": "Pied de Page Fixe",
+      "height": "Hauteur du Pied de Page",
+      "right": "Pied de Page à Droite",
+      "visible": "Pied de Page Visible"
+    },
+    "grayscale": "Niveaux de Gris",
+    "header": {
+      "breadcrumb": {
+        "showIcon": "Icône du Fil d'Ariane Visible",
+        "visible": "Fil d'Ariane Visible"
+      },
+      "height": "Hauteur de l'En-tête"
+    },
+    "layoutMode": {
+      "horizontal": "Mode Menu Horizontal",
+      "horizontal-mix": "Mode Menu Mixte Horizontal",
+      "reverseHorizontalMix": "Inverser la position des menus de premier niveau et des menus enfants",
+      "title": "Mode de Disposition",
+      "vertical": "Mode Menu Vertical",
+      "vertical-mix": "Mode Menu Mixte Vertical"
+    },
+    "page": {
+      "animate": "Animation de la Page",
+      "mode": {
+        "fade": "Fondu",
+        "fade-bottom": "Zoom par le Bas",
+        "fade-scale": "Échelle de Fondu",
+        "fade-slide": "Glissement",
+        "none": "Aucun",
+        "title": "Mode d'Animation de la Page",
+        "zoom-fade": "Fondu Zoom",
+        "zoom-out": "Zoom arrière"
+      }
+    },
+    "pageFunTitle": "Fonctionnalité de la Page",
+    "recommendColor": "Appliquer l'Algorithme de Couleur Recommandé",
+    "recommendColorDesc": "L'algorithme de couleur recommandé se réfère à",
+    "scrollMode": {
+      "content": "Contenu",
+      "title": "Mode de Défilement",
+      "wrapper": "Enveloppe"
+    },
+    "sider": {
+      "collapsedWidth": "Largeur Réduite de la Barre Latérale",
+      "inverted": "Barre Latérale Sombre",
+      "mixChildMenuWidth": "Largeur du Menu Enfant Mixte",
+      "mixCollapsedWidth": "Largeur Réduite de la Barre Latérale Mixte",
+      "mixWidth": "Largeur de la Barre Latérale Mixte",
+      "width": "Largeur de la Barre Latérale"
+    },
+    "tab": {
+      "cache": "Cache de l'Onglet",
+      "height": "Hauteur de l'Onglet",
+      "mode": {
+        "button": "Bouton",
+        "chrome": "Chrome",
+        "title": "Mode d'Onglet"
+      },
+      "visible": "Onglet Visible"
+    },
+    "themeColor": {
+      "error": "Erreur",
+      "followPrimary": "Suivre la Principale",
+      "info": "Information",
+      "primary": "Principale",
+      "success": "Succès",
+      "title": "Couleur du Thème",
+      "warning": "Avertissement"
+    },
+    "themeDrawerTitle": "Configuration du Thème",
+    "themeSchema": {
+      "auto": "Suivre le Système",
+      "dark": "Sombre",
+      "light": "Clair",
+      "title": "Schéma du Thème"
+    }
+  }

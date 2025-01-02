@@ -1,0 +1,35 @@
+{
+  "code": {
+    "invalid": "Le format du code de vérification est incorrect",
+    "required": "Veuillez entrer le code de vérification"
+  },
+  "component": {
+    "collapse": "Réduire",
+    "expand": "Développer"
+  },
+  "confirmPwd": {
+    "invalid": "Les deux mots de passe sont différents",
+    "required": "Veuillez entrer le mot de passe à nouveau"
+  },
+  "email": {
+    "invalid": "Le format de l'email est incorrect",
+    "required": "Veuillez entrer l'email"
+  },
+  "phone": {
+    "invalid": "Le format du numéro de téléphone est incorrect",
+    "required": "Veuillez entrer le numéro de téléphone"
+  },
+  "placeholder": {
+    "input": "Veuillez saisir",
+    "select": "Veuillez sélectionner"
+  },
+  "pwd": {
+    "invalid": "6-18 caractères, incluant lettres, chiffres et underscores",
+    "required": "Veuillez entrer le mot de passe"
+  },
+  "required": "Ne peut pas être vide",
+  "userName": {
+    "invalid": "Le format du nom d'utilisateur est incorrect",
+    "required": "Veuillez entrer le nom d'utilisateur"
+  }
+}

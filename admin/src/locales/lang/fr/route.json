@@ -1,0 +1,10 @@
+{
+  "403": "pas-d'autorisation",
+  "404": "non-trouvé",
+  "500": "erreur-serveur",
+  "hi": "Salutation",
+  "home": "Accueil",
+  "login": "Connexion",
+  "logout": "Déconnexion",
+  "roles": "Rôles"
+}
