@@ -15,5 +15,8 @@
     "react"
   ],
   "commentTranslate.hover.enabled": false,
-  "commentTranslate.browse.mode": "inplace"
+  "commentTranslate.browse.mode": "inplace",
+  "conventionalCommits.scopes": [
+    "admin"
+  ]
 }
