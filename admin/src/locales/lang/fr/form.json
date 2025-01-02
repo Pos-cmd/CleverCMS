@@ -15,6 +15,14 @@
     "invalid": "Le format de l'email est incorrect",
     "required": "Veuillez entrer l'email"
   },
+  "firstname": {
+    "invalid": "le prénom est invalide - il doit contenir entre 4 et 16 caractères",
+    "required": "Veuillez entrer le prénom"
+  },
+  "lastname": {
+    "invalid": "le nom est invalide - il doit contenir entre 4 et 16 caractères",
+    "required": "Veuillez entrer le nom"
+  },
   "phone": {
     "invalid": "Le format du numéro de téléphone est incorrect",
     "required": "Veuillez entrer le numéro de téléphone"

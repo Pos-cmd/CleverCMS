@@ -68,7 +68,7 @@
     "forgetFormTitle": "Reset Password",
     "forgetPassword": "Forgotten password?",
     "loginButton": "Connection",
-    "loginSuccessDesc": "Glad to see you again",
+    "loginSuccessDesc": "Good to see you again { username }",
     "loginSuccessTitle": "Connection successful",
     "mobile": "Mobile",
     "mobilePlaceholder": "Please enter mobile",

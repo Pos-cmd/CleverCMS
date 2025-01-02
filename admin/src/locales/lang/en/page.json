@@ -1,0 +1,79 @@
+{
+  "home": {
+    "branchDesc": "To make it easier to develop and update merges, we simplified the main branch code by retaining only the home menu. \nThe rest of the content has been moved to the example branch for maintenance. \nThe preview displays the contents of the sample branch.",
+    "creativity": "Creativity",
+    "dealCount": "Number of transactions",
+    "downloadCount": "Number of downloads",
+    "entertainment": "Entertainment",
+    "greeting": "Hello {userName}, a new day full of energy begins!",
+    "message": "Messages",
+    "projectCount": "Number of projects",
+    "projectNews": {
+      "desc1": "Soybean created the soybean-admin open source project on May 28, 2021!",
+      "desc2": "Yanbowe reported a bug in soybean-admin regarding the adaptation of the multi-tab bar.",
+      "desc3": "Soybean is actively preparing the release of soybean-admin!",
+      "desc4": "Soybean is working on the documentation for the soybean-admin project!",
+      "desc5": "Soybean just created a few dashboard pages, and it's already impressive!",
+      "moreNews": "More news",
+      "title": "Project News"
+    },
+    "registerCount": "Number of registrations",
+    "rest": "Rest",
+    "schedule": "Work schedule",
+    "study": "Studies",
+    "todo": "To do",
+    "turnover": "Turnover",
+    "visitCount": "Number of visits",
+    "weatherDesc": "Today, variable weather with sunny spells, 20℃ - 25℃!",
+    "work": "Work"
+  },
+  "login": {
+    "bindWeChat": {
+      "title": "Link WeChat account"
+    },
+    "codeLogin": {
+      "getCode": "Get the code",
+      "imageCodePlaceholder": "Please enter the visual verification code",
+      "reGetCode": "Resend in {time}s",
+      "sendCodeSuccess": "Verification code sent successfully",
+      "title": "Login by verification code"
+    },
+    "common": {
+      "back": "Back",
+      "codeLogin": "Login by verification code",
+      "codePlaceholder": "Please enter the verification code",
+      "confirm": "Confirm",
+      "confirmPasswordPlaceholder": "Please confirm your password",
+      "emailPlaceholder": "Please enter your email",
+      "firstnamePlaceholder": "Please enter your first name",
+      "lastnamePlaceholder": "Please enter your name",
+      "loginOrRegister": "Login / Register",
+      "loginSuccess": "Connection successful",
+      "passwordPlaceholder": "Please enter your password",
+      "phonePlaceholder": "Please enter your phone number",
+      "userNamePlaceholder": "Please enter your username",
+      "validateSuccess": "Verification successful",
+      "welcomeBack": "Welcome back, {userName}!"
+    },
+    "pwdLogin": {
+      "admin": "Administrator",
+      "forgetPassword": "Forgotten password?",
+      "otherAccountLogin": "Other connection methods",
+      "otherLoginMode": "Other connection methods",
+      "register": "Register",
+      "rememberMe": "Remember me",
+      "superAdmin": "Super admin",
+      "title": "Password login",
+      "user": "User"
+    },
+    "register": {
+      "agreement": "I have read and I accept",
+      "policy": "《privacy policy》",
+      "protocol": "《conditions of use》",
+      "title": "Registration"
+    },
+    "resetPwd": {
+      "title": "Reset Password"
+    }
+  }
+}

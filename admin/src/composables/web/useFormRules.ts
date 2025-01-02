@@ -1,5 +1,6 @@
 import { REG_CODE_SIX, REG_EMAIL, REG_PHONE, REG_PWD, REG_USER_NAME } from '@/constants/reg'
 import { $t } from '@/locales'
+import { first } from 'lodash-es'
 import type { FormInst } from 'naive-ui'
 import type { ComputedRef, Ref } from 'vue'
 import { ref, toValue } from 'vue'
@@ -32,9 +33,21 @@ export function useFormRules() {
       message: $t('form.email.invalid'),
       trigger: 'change',
     },
+    firstname: {
+      pattern: REG_USER_NAME,
+      message: $t('form.firstname.invalid'),
+      trigger: 'change',
+    },
+    lastname: {
+      pattern: REG_USER_NAME,
+      message: $t('form.lastname.invalid'),
+      trigger: 'change',
+    },
   } satisfies Record<string, App.Global.FormRule>
 
   const formRules = {
+    firstname: [createRequiredRule($t('form.firstname.required')), patternRules.firstname],
+    lastname: [createRequiredRule($t('form.lastname.required')), patternRules.lastname],
     username: [createRequiredRule($t('form.userName.required')), patternRules.username],
     phone: [createRequiredRule($t('form.phone.required')), patternRules.phone],
     pwd: [createRequiredRule($t('form.pwd.required')), patternRules.pwd],

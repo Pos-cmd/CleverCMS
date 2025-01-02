@@ -1,3 +1,8 @@
+/**
+ * Regular expressions
+ * 
+ * 4-16 characters, including Chinese, letters, numbers, and underscores
+ */
 export const REG_USER_NAME = /^[\u4E00-\u9FA5\w-]{4,16}$/
 
 /** Phone reg */

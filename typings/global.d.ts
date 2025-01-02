@@ -18,21 +18,6 @@ declare global {
     lastBuildTime: string
   }
 
-  export interface Window {
-    /** NProgress instance */
-    NProgress?: import('nprogress').NProgress
-    /** Loading bar instance */
-    $loadingBar?: import('naive-ui').LoadingBarProviderInst
-    /** Dialog instance */
-    $dialog?: import('naive-ui').DialogProviderInst
-    /** Message instance */
-    $message?: import('naive-ui').MessageProviderInst
-    /** Notification instance */
-    $notification?: import('naive-ui').NotificationProviderInst
-    /** Toast instance from vue-sonner */
-    $toast: typeof import('vue-sonner').toast
-  }
-
   // vue
   declare type PropType<T> = VuePropType<T>
   declare type VueNode = VNodeChild | JSX.Element

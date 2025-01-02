@@ -4,5 +4,7 @@
   "500": "server-error",
   "hi": "Greeting",
   "home": "Welcome",
-  "login": "Connection"
+  "login": "Connection",
+  "logout": "Disconnect",
+  "roles": "Roles"
 }

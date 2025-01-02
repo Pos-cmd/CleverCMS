@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useDialog, useLoadingBar, useMessage, useNotification } from 'naive-ui';
 import { createTextVNode, defineComponent } from 'vue';
-import { toast } from 'vue-sonner';
+import { toast, Toaster } from 'vue-sonner';
 defineOptions({
   name: 'AppProvider',
 })
@@ -25,6 +25,7 @@ const ContextHolder = defineComponent({
 </script>
 
 <template>
+  <Toaster richColors/>
   <NLoadingBarProvider>
     <NDialogProvider>
       <NNotificationProvider>

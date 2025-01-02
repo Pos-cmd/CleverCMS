@@ -1,7 +1,7 @@
-import { useRouter } from 'vue-router'
-import type { RouteLocationRaw } from 'vue-router'
-import type { RouteKey } from '@elegant-router/types'
 import { router as globalRouter } from '@/router'
+import type { RouteKey } from '@elegant-router/types'
+import type { RouteLocationRaw } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 /**
  * Router push
@@ -37,7 +37,7 @@ export function useRouterPush(inSetup = true) {
     if (Object.keys(params || {}).length) {
       routeLocation.params = params
     }
-
+    
     return routerPush(routeLocation)
   }
 

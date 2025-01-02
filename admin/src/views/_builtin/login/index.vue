@@ -1,95 +1,89 @@
 <script setup lang="ts">
-import { useFormRules, useNaiveForm } from '@/composables/web/useFormRules'
-import { $t } from '@/locales'
-import { LoginParams } from '@/services/api/auth/types'
-import { useAuthStore } from '@/stores/modules/auth'
-import { FormItemRule } from 'naive-ui'
+import { loginModuleRecord } from '@/constants/app';
+import { $t } from '@/locales';
+import { useAppStore } from '@/stores/modules/app';
+import { useThemeStore } from '@/stores/modules/theme';
+import { getPaletteColorByNumber, mixColor } from '@clever/color';
+import type { Component } from 'vue';
+import { computed } from 'vue';
+import BindWechat from './modules/bind-wechat.vue';
+import CodeLogin from './modules/code-login.vue';
+import PwdLogin from './modules/pwd-login.vue';
+import Register from './modules/register.vue';
+import ResetPwd from './modules/reset-pwd.vue';
 
-defineOptions({
-  name: 'LoginPage',
-})
-
-const { login } = useAuthStore()
-const { formRef, validate } = useNaiveForm()
-
-const loginParams = reactive<LoginParams>({
-  email: '',
-  password: '',
-})
-
-//@ts-expect-error
-const rules = computed<Record<keyof Omit<LoginParams, 'goHome'>, App.Global.FormRule[]>>(() => {
-  // inside computed to make locale reactive, if not apply i18n, you can define it without computed
-  const { formRules } = useFormRules()
-
-  return {
-    username: formRules.username as FormItemRule,
-    password: formRules.pwd as FormItemRule,
-  }
-})
-
-async function handleSubmit() {
-  try {
-    await validate()
-    const userInfo = await login(loginParams)
-
-    window?.$notification?.success({ content: `Bienvenue ${userInfo?.firstname}`, duration: 3000 })
-  } catch(error: any) {
-    console.log({ error })
-  }
+interface Props {
+  /** The login module */
+  module?: UnionKey.LoginModule;
 }
+
+const props = defineProps<Props>();
+
+const appStore = useAppStore();
+const themeStore = useThemeStore();
+
+interface LoginModule {
+  label: string;
+  component: Component;
+}
+
+const moduleMap: Record<UnionKey.LoginModule, LoginModule> = {
+  'pwd-login': { label: loginModuleRecord['pwd-login'], component: PwdLogin },
+  'code-login': { label: loginModuleRecord['code-login'], component: CodeLogin },
+  register: { label: loginModuleRecord.register, component: Register },
+  'reset-pwd': { label: loginModuleRecord['reset-pwd'], component: ResetPwd },
+  'bind-wechat': { label: loginModuleRecord['bind-wechat'], component: BindWechat }
+};
+
+const activeModule = computed(() => moduleMap[props.module || 'pwd-login']);
+
+const bgThemeColor = computed(() =>
+  themeStore.darkMode ? getPaletteColorByNumber(themeStore.themeColor, 600) : themeStore.themeColor
+);
+
+const bgColor = computed(() => {
+  const COLOR_WHITE = '#ffffff';
+
+  const ratio = themeStore.darkMode ? 0.5 : 0.2;
+
+  return mixColor(COLOR_WHITE, themeStore.themeColor, ratio);
+});
 </script>
 
 <template>
-  <AuthLayout>
-    <div class="h-full px-4 py-10 text-center text-gray-700 dark:text-gray-200">
-      <div class="text-4xl">
-        <div class="inline-block i-il-logo" />
+  <div class="relative size-full flex-center overflow-hidden" :style="{ backgroundColor: bgColor }">
+    <WaveBg :theme-color="bgThemeColor" />
+    <NCard :bordered="false" class="relative z-4 w-auto rd-12px">
+      <div class="w-400px lt-sm:w-300px">
+        <header class="flex-y-center justify-between">
+          <SystemLogo class="text-64px text-primary lt-sm:text-48px" />
+          <h3 class="text-28px text-primary font-500 lt-sm:text-22px">{{ $t('system.title') }}</h3>
+          <div class="i-flex-col">
+            <ThemeSchemaSwitch
+              :theme-schema="themeStore.themeScheme"
+              :show-tooltip="false"
+              class="text-20px lt-sm:text-18px"
+              @switch="themeStore.toggleThemeScheme"
+            />
+            <LangSwitch
+              :lang="appStore.locale"
+              :lang-options="appStore.localeOptions"
+              :show-tooltip="false"
+              @change-lang="appStore.changeLocale"
+            />
+          </div>
+        </header>
+        <main class="pt-24px">
+          <h3 class="text-18px text-primary font-medium">{{ $t(activeModule.label) }}</h3>
+          <div class="pt-24px">
+            <Transition :name="themeStore.page.animateMode" mode="out-in" appear>
+              <component :is="activeModule.component" />
+            </Transition>
+          </div>
+        </main>
       </div>
-      <p>
-        <a rel="noreferrer" href="https://github.com/pos-cmd/vue-starter" target="_blank">
-          {{ $t('system.title') }}
-        </a>
-      </p>
-      <p>
-        <em class="text-sm opacity-75">{{ $t('sys.app.desc') }}</em>
-      </p>
-  
-      <div class="py-4" />
-  
-      <NSpace justify="center">
-        <NForm
-          ref="formRef"
-          :model="loginParams"
-          :label-width="80"
-          :rules="rules"
-          size="large"
-          class="text-center w-250px!"
-        >
-          <NFormItem :label="$t('sys.login.email')" path="email">
-            <NInput v-model:value="loginParams.email" :placeholder="$t('sys.login.emailPlaceholder')" />
-          </NFormItem>
-          <NFormItem :label="$t('sys.login.password')" path="password">
-            <NInput v-model:value="loginParams.password" show-password-on="mousedown" :placeholder="$t('sys.login.passwordPlaceholder')" type="password" />
-          </NFormItem>
-        </NForm>
-      </NSpace>
-  
-      <div>
-        <n-button
-          class="m-3 text-sm btn"
-          type="primary"
-          :disabled="(!loginParams?.email && !loginParams?.password)"
-          @click="handleSubmit"
-        >
-          {{ $t('sys.login.loginButton') }}
-        </n-button>
-      </div>
-      <TheFooter />
-    </div>
-  </AuthLayout>
+    </NCard>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

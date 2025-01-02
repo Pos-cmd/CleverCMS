@@ -9,6 +9,11 @@
   "check": "Check",
   "close": "Close",
   "columnSetting": "Column parameter",
+  "component": {
+    "button": {
+      "reset": "Reset"
+    }
+  },
   "config": "Configuration",
   "confirm": "Confirm",
   "confirmDelete": "Are you sure you want to delete?",

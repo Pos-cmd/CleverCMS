@@ -69,7 +69,7 @@
     "forgetFormTitle": "Réinitialiser le mot de passe",
     "forgetPassword": "Mot de passe oublié ?",
     "loginButton": "Connexion",
-    "loginSuccessDesc": "Content de vous revoir",
+    "loginSuccessDesc": "Content de vous revoir { username }",
     "loginSuccessTitle": "Connexion réussie",
     "mobile": "Mobile",
     "mobilePlaceholder": "Veuillez entrer le mobile",

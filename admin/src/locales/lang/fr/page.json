@@ -1,0 +1,79 @@
+{
+  "home": {
+    "branchDesc": "Pour faciliter le développement et la mise à jour des fusions, nous avons simplifié le code de la branche principale en ne conservant que le menu d'accueil. Le reste du contenu a été déplacé vers la branche exemple pour la maintenance. L'aperçu affiche le contenu de la branche exemple.",
+    "creativity": "Créativité",
+    "dealCount": "Nombre de transactions",
+    "downloadCount": "Nombre de téléchargements",
+    "entertainment": "Divertissement",
+    "greeting": "Bonjour {userName}, une nouvelle journée pleine d'énergie commence !",
+    "message": "Messages",
+    "projectCount": "Nombre de projets",
+    "projectNews": {
+      "desc1": "Soybean a créé le projet open source soybean-admin le 28 mai 2021 !",
+      "desc2": "Yanbowe a signalé un bug dans soybean-admin concernant l'adaptation de la barre multi-onglets.",
+      "desc3": "Soybean prépare activement la sortie de soybean-admin !",
+      "desc4": "Soybean travaille sur la documentation du projet soybean-admin !",
+      "desc5": "Soybean vient de créer quelques pages du tableau de bord, et c'est déjà impressionnant !",
+      "moreNews": "Plus d'actualités",
+      "title": "Actualités du projet"
+    },
+    "registerCount": "Nombre d'inscriptions",
+    "rest": "Repos",
+    "schedule": "Planning de travail",
+    "study": "Études",
+    "todo": "À faire",
+    "turnover": "Chiffre d'affaires",
+    "visitCount": "Nombre de visites",
+    "weatherDesc": "Aujourd'hui, temps variable avec éclaircies, 20℃ - 25℃ !",
+    "work": "Travail"
+  },
+  "login": {
+    "bindWeChat": {
+      "title": "Lier le compte WeChat"
+    },
+    "codeLogin": {
+      "getCode": "Obtenir le code",
+      "imageCodePlaceholder": "Veuillez saisir le code de vérification visuel",
+      "reGetCode": "Renvoyer dans {time}s",
+      "sendCodeSuccess": "Code de vérification envoyé avec succès",
+      "title": "Connexion par code de vérification"
+    },
+    "common": {
+      "back": "Retour",
+      "codeLogin": "Connexion par code de vérification",
+      "codePlaceholder": "Veuillez saisir le code de vérification",
+      "confirm": "Confirmer",
+      "confirmPasswordPlaceholder": "Veuillez confirmer votre mot de passe",
+      "emailPlaceholder": "Veuiilez saisir votre email",
+      "firstnamePlaceholder": "Veuilez saisir votre prénom",
+      "lastnamePlaceholder": "Veuilez entrer votre nom",
+      "loginOrRegister": "Connexion / Inscription",
+      "loginSuccess": "Connexion réussie",
+      "passwordPlaceholder": "Veuillez saisir votre mot de passe",
+      "phonePlaceholder": "Veuillez saisir votre numéro de téléphone",
+      "userNamePlaceholder": "Veuillez saisir votre nom d'utilisateur",
+      "validateSuccess": "Vérification réussie",
+      "welcomeBack": "Bon retour parmi nous, {userName} !"
+    },
+    "pwdLogin": {
+      "admin": "Administrateur",
+      "forgetPassword": "Mot de passe oublié ?",
+      "otherAccountLogin": "Autres méthodes de connexion",
+      "otherLoginMode": "Autres modes de connexion",
+      "register": "S'inscrire",
+      "rememberMe": "Se souvenir de moi",
+      "superAdmin": "Super administrateur",
+      "title": "Connexion par mot de passe",
+      "user": "Utilisateur"
+    },
+    "register": {
+      "agreement": "J'ai lu et j'accepte",
+      "policy": "《la politique de confidentialité》",
+      "protocol": "《les conditions d'utilisation》",
+      "title": "Inscription"
+    },
+    "resetPwd": {
+      "title": "Réinitialiser le mot de passe"
+    }
+  }
+}

@@ -4,14 +4,16 @@ const password = vine.string().minLength(8).maxLength(255)
 
 export const registerValidator = vine.compile(
   vine.object({
-    firtsname: vine.string().minLength(4).trim(),
+    firstname: vine.string().minLength(4).trim(),
     lastname: vine.string().minLength(4).trim(),
     email: vine
       .string()
       .email()
       .normalizeEmail()
       .unique(async (db, value) => {
-        const match = db.from('users').select('id').where('email', value).first()
+        const match = await db.from('users').select('id').where('email', value).first()
+
+        console.log('match', match)
 
         return !match
       }),

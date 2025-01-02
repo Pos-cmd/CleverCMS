@@ -1,4 +1,4 @@
-import { RoleInterface } from '~/typings/model'
+import { IRole } from '#/model'
 
 /**
  * @description: User token interface
@@ -29,6 +29,7 @@ export interface RegisterParams {
   lastname: string
   email: string
   password: string
+  confirmPassword: string
 }
 
 /**
@@ -37,5 +38,5 @@ export interface RegisterParams {
 export interface LoginResultModel {
   userId: string | number
   token: UserTokenModel
-  role: RoleInterface
+  role: IRole
 }
