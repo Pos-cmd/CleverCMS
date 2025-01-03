@@ -61,16 +61,5 @@ export const generatedRoutes: GeneratedRoute[] = [
       constant: true,
       hideInMenu: true
     }
-  },
-  {
-    name: 'roles',
-    path: '/roles',
-    component: 'layout.base$view.roles',
-    meta: {
-      title: 'roles',
-      i18nKey: 'route.roles',
-      icon: 'ph:shield-duotone',
-      order: 2,
-    }
   }
 ];

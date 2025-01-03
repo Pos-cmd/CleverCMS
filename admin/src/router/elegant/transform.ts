@@ -167,8 +167,7 @@ const routeMap: RouteMap = {
   "404": "/404",
   "500": "/500",
   "home": "/home",
-  "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?",
-  "roles": "/roles"
+  "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?"
 };
 
 /**

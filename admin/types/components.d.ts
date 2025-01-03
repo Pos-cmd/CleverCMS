@@ -22,6 +22,7 @@ declare module 'vue' {
     DarkModeContainer: typeof import('./../src/components/Application/DarkModeContainer.vue')['default']
     Default: typeof import('./../src/layout/default.vue')['default']
     ExceptionBase: typeof import('./../src/components/ExceptionBase/index.vue')['default']
+    FormBuilder: typeof import('./../src/components/FormBuilder/src/FormBuilder.vue')['default']
     IAntDesignEnterOutlined: typeof import('~icons/ant-design/enter-outlined')['default']
     ICarbonArrowDown: typeof import('~icons/carbon/arrow-down')['default']
     ICarbonArrowUp: typeof import('~icons/carbon/arrow-up')['default']
