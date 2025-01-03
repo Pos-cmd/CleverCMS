@@ -19,6 +19,11 @@
     "networkExceptionMsg": "Veuillez vérifier si votre connexion réseau est normale ! Le réseau est anormal",
     "operationFailed": "Échec de l'opération",
     "operationSuccess": "Opération réussie",
+    "page": {
+      "created": "Page crée avec succès",
+      "deleted": "Page supprimer",
+      "updated": "Page mise à jour avec succès"
+    },
     "successTip": "Conseil de réussite",
     "timeoutMessage": "Temps de connexion écoulé, veuillez vous reconnecter !"
   },

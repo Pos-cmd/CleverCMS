@@ -323,6 +323,9 @@ importers:
       '@inertiajs/vue3':
         specifier: ^2.0.0
         version: 2.0.0(vue@3.5.13(typescript@5.7.2))
+      '@stouder-io/adonis-translatable':
+        specifier: ^1.1.0
+        version: 1.1.0(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@adonisjs/lucid@21.6.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@vinejs/vine@3.0.0)(luxon@3.5.0)(mysql2@3.12.0))(mysql2@3.12.0)
       '@vinejs/vine':
         specifier: ^3.0.0
         version: 3.0.0
@@ -2047,6 +2050,13 @@ packages:
   '@sindresorhus/merge-streams@4.0.0':
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
+
+  '@stouder-io/adonis-translatable@1.1.0':
+    resolution: {integrity: sha512-LsbESYKLfuNWGeBlixokIhfYF3czUTidFa7qXLe0x7X+AeQ7I9UKSs32/6xJKAftCSuI8tC08q7+NhpPdW2Wvg==}
+    engines: {node: '>=18.16.0'}
+    peerDependencies:
+      '@adonisjs/core': ^6.9.0
+      '@adonisjs/lucid': ^20.6.0 || ^21.0.0
 
   '@stylistic/eslint-plugin-ts@2.12.1':
     resolution: {integrity: sha512-Xx1NIioeW6LLlOfq5L/dLSrUXvi6q80UXDNbn/rXjKCzFT4a8wKwtp1q25kssdr1JEXI9a6tOHwFsh4Em+MoGg==}
@@ -8552,6 +8562,21 @@ snapshots:
   '@sindresorhus/merge-streams@2.3.0': {}
 
   '@sindresorhus/merge-streams@4.0.0': {}
+
+  '@stouder-io/adonis-translatable@1.1.0(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@adonisjs/lucid@21.6.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@vinejs/vine@3.0.0)(luxon@3.5.0)(mysql2@3.12.0))(mysql2@3.12.0)':
+    dependencies:
+      '@adonisjs/core': 6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0)
+      '@adonisjs/lucid': 21.6.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@vinejs/vine@3.0.0)(luxon@3.5.0)(mysql2@3.12.0)
+      knex: 3.1.0(mysql2@3.12.0)
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
 
   '@stylistic/eslint-plugin-ts@2.12.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)':
     dependencies:

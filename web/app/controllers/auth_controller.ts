@@ -1,9 +1,13 @@
-import { resultSuccess } from '#helpers/index'
 import User from '#models/user'
+import { ApiResponseService } from '#services/api_response_service'
 import { loginValidator, registerValidator } from '#validators/auth'
+import { inject } from '@adonisjs/core'
 import type { HttpContext } from '@adonisjs/core/http'
 
+@inject()
 export default class AuthController {
+  constructor(protected apiResponse: ApiResponseService) {}
+
   async register({ request, response, i18n }: HttpContext) {
     const data = await request.validateUsing(registerValidator)
 
@@ -11,7 +15,9 @@ export default class AuthController {
 
     const token = await User.accessTokens.create(user)
 
-    return response.created(resultSuccess({ user, token }, { message: i18n.t('auth.registered') }))
+    return response.created(
+      this.apiResponse.resultSuccess({ user, token }, { message: i18n.t('auth.registered') })
+    )
   }
 
   async login({ request, response, i18n }: HttpContext) {
@@ -21,7 +27,9 @@ export default class AuthController {
 
     const token = await User.accessTokens.create(user)
 
-    return response.ok(resultSuccess({ user, token }, { message: i18n.t('auth.logged_in') }))
+    return response.ok(
+      this.apiResponse.resultSuccess({ user, token }, { message: i18n.t('auth.logged_in') })
+    )
   }
 
   async logout({ auth, response, i18n }: HttpContext) {
@@ -29,7 +37,7 @@ export default class AuthController {
 
     await User.accessTokens.delete(user, user.currentAccessToken.identifier)
 
-    return response.ok(resultSuccess({}, { message: i18n.t('auth.logged_out') }))
+    return response.ok(this.apiResponse.resultSuccess({}, { message: i18n.t('auth.logged_out') }))
   }
 
   async me({ auth, response }: HttpContext) {
@@ -37,6 +45,6 @@ export default class AuthController {
 
     const user = auth.user!
 
-    return response.ok(resultSuccess(user))
+    return response.ok(this.apiResponse.resultSuccess(user))
   }
 }

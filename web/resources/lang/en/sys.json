@@ -19,6 +19,11 @@
     "networkExceptionMsg": "Please check if your network connection is normal! \nThe network is abnormal",
     "operationFailed": "Operation failed",
     "operationSuccess": "Successful operation",
+    "page": {
+      "created": "Page created successfully",
+      "deleted": "Page delete",
+      "updated": "Page updated successfully"
+    },
     "successTip": "Success Tip",
     "timeoutMessage": "Connection time expired, please log in again!"
   },

@@ -93,4 +93,25 @@
       - Gérer les erreurs de validation côté serveur via Inertia
       - Optimiser les requêtes avec la méthode only() d'AdonisJS
 
+13. **Validation avec VineJS** :
+
+    - Utiliser VineJS comme librairie de validation principale pour le contexte web
+    - Suivre les bonnes pratiques de validation :
+      - Créer des schémas de validation réutilisables
+      - Implémenter des messages d'erreur personnalisés en français
+      - Utiliser les types TypeScript générés par VineJS
+      - Appliquer les règles de validation appropriées selon le contexte
+    - Structure recommandée :
+      ```typescript
+      import vine from '@vinejs/vine'
+
+      export const validationSchema = vine.object({
+        // Définition du schéma
+        field: vine.string().minLength(3).maxLength(255),
+      })
+      ```
+    - Gérer les erreurs de validation de manière cohérente
+    - Implémenter des validations personnalisées si nécessaire
+    - Utiliser les fonctionnalités avancées comme les validations conditionnelles et les validations imbriquées
+
 Merci de respecter ces instructions lors de la génération de code et de la mise à jour des fichiers d'internationalisation.
