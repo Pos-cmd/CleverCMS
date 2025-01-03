@@ -47,7 +47,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'home',
       i18nKey: 'route.home',
       icon: 'ph:desktop-duotone',
-      order: 1
+      order: 1,
     }
   },
   {

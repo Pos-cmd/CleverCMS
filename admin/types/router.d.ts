@@ -68,5 +68,12 @@ declare module 'vue-router' {
     fixedIndexInTab?: number | null
     /** if set query parameters, it will be automatically carried when entering the route */
     query?: { key: string, value: string }[] | null
+    /** Nom du groupe (optionnel) */
+    group?: {
+      name: string
+      order?: number
+      i18nKey?: App.I18n.I18nKey | null
+    }
+    divider?: boolean
   }
 }

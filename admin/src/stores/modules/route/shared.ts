@@ -64,54 +64,93 @@ export function sortRoutesByOrder(routes: ElegantConstRoute[]) {
 }
 
 /**
- * Get global menus by auth routes
- *
- * @param routes Auth routes
+ * Transforme les routes en menus globaux avec support des groupes et dividers
+ * 
+ * @param routes - Routes d'authentification
+ * @returns Menus globaux structurés
  */
-export function getGlobalMenusByAuthRoutes(routes: ElegantConstRoute[]) {
-  const menus: App.Global.Menu[] = []
+export function getGlobalMenusByAuthRoutes(routes: ElegantConstRoute[]): App.Global.Menu[] {
+  const groupedMenus = new Map<string, App.Global.Menu[]>();
+  const defaultGroup = 'ungrouped';
+  const result: App.Global.Menu[] = [];
 
-  routes.forEach((route) => {
-    if (!route.meta?.hideInMenu) {
-      const menu = getGlobalMenuByBaseRoute(route)
+  // Trie initial des routes par ordre
+  const sortedRoutes = [...routes].sort((a, b) => 
+    (a.meta?.order || 0) - (b.meta?.order || 0)
+  );
 
-      if (route.children?.some(child => !child.meta?.hideInMenu)) {
-        menu.children = getGlobalMenusByAuthRoutes(route.children)
-      }
+  // Première passe : création des menus et groupement
+  sortedRoutes.forEach((route) => {
+    if (route.meta?.hideInMenu) return;
 
-      menus.push(menu)
+    const menu = getGlobalMenuByBaseRoute(route);
+
+    // Gestion des enfants
+    if (route.children?.some(child => !child.meta?.hideInMenu)) {
+      menu.children = getGlobalMenusByAuthRoutes(route.children);
     }
-  })
 
-  return menus
+    // Gestion des groupes
+    const groupName = route.meta?.group?.name || defaultGroup;
+    const groupedItems = groupedMenus.get(groupName) || [];
+    groupedItems.push(menu);
+    groupedMenus.set(groupName, groupedItems);
+
+    // Ajout du divider si nécessaire
+    if (route.meta?.divider) {
+      groupedItems.push({
+        key: `divider-${route.name}`,
+        type: 'divider'
+      } as App.Global.Menu);
+    }
+  });
+
+  // Deuxième passe : structuration finale du menu
+  groupedMenus.forEach((menus, groupName) => {
+    if (groupName === defaultGroup) {
+      result.push(...menus);
+    } else {
+      // Création du groupe
+      const groupedRoute = sortedRoutes.find(r => r.meta?.group?.name === groupName);
+      result.push({
+        key: `group-${groupName}`,
+        label: groupedRoute?.meta?.group?.i18nKey ? $t(groupedRoute.meta.group.i18nKey) : groupName,
+        type: 'group',
+        groupOrder: groupedRoute?.meta?.group?.order || 0,
+        children: menus
+      } as App.Global.Menu);
+    }
+  });
+
+
+  // Tri final des groupes
+  return result.sort((a, b) => (a.groupOrder || 0) - (b.groupOrder || 0));
 }
 
 /**
- * Update locale of global menus
- *
- * @param menus
+ * Met à jour les libellés des menus selon la locale
+ * 
+ * @param menus - Menus à mettre à jour
+ * @returns Menus avec libellés mis à jour
  */
-export function updateLocaleOfGlobalMenus(menus: App.Global.Menu[]) {
-  const result: App.Global.Menu[] = []
-
-  menus.forEach((menu) => {
-    const { i18nKey, label, children } = menu
-
-    const newLabel = i18nKey ? $t(i18nKey) : label
-
-    const newMenu: App.Global.Menu = {
-      ...menu,
-      label: newLabel,
+export function updateLocaleOfGlobalMenus(menus: App.Global.Menu[]): App.Global.Menu[] {
+  return menus.map(menu => {
+    if (menu.type === 'divider') {
+      return menu;
     }
 
-    if (children?.length) {
-      newMenu.children = updateLocaleOfGlobalMenus(children)
+    const updatedMenu = { ...menu };
+
+    if (menu.i18nKey) {
+      updatedMenu.label = $t(menu.i18nKey);
     }
 
-    result.push(newMenu)
-  })
+    if (menu.children?.length) {
+      updatedMenu.children = updateLocaleOfGlobalMenus(menu.children);
+    }
 
-  return result
+    return updatedMenu;
+  });
 }
 
 /**

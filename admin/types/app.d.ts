@@ -220,7 +220,7 @@ declare namespace App {
       showMenu?: boolean
     }
 
-    type MixedOption = import('naive-ui').MenuMixedOption
+    type MixedOption = import('naive-ui').MenuDividerOption
 
     /** The global menu */
     interface Menu extends MixedOption {
@@ -232,6 +232,10 @@ declare namespace App {
       key: string
       /** The menu label */
       label: string
+      /** The menue type */
+      type?: 'group' | 'divider'
+      /** The group order */
+      groupOrder?: number
       /** The menu i18n key */
       i18nKey?: I18n.I18nKey | null
       /** The route key */
