@@ -1,5 +1,11 @@
 {
   "back": "Retour",
+  "create": {
+    "blocks": "Ajouter un bloc",
+    "menus": "Ajouter un menu",
+    "pages": "Ajouter une page",
+    "sections": "Ajouter une section"
+  },
   "go": "Aller",
   "yes": "Oui"
 }

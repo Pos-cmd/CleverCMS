@@ -1,4 +1,7 @@
 {
+  "blocks": {
+    "emptyMessage": "Vous n'avez aucun bloc pour le moment"
+  },
   "home": {
     "branchDesc": "Pour faciliter le développement et la mise à jour des fusions, nous avons simplifié le code de la branche principale en ne conservant que le menu d'accueil. Le reste du contenu a été déplacé vers la branche exemple pour la maintenance. L'aperçu affiche le contenu de la branche exemple.",
     "creativity": "Créativité",
@@ -75,5 +78,17 @@
     "resetPwd": {
       "title": "Réinitialiser le mot de passe"
     }
+  },
+  "menus": {
+    "emptyMessage": "Vous n'avez aucun menu"
+  },
+  "notification": {
+    "emptyMessage": "Aucune notification pour le moment"
+  },
+  "pages": {
+    "emptyMessage": "Vous n'avez aucune page"
+  },
+  "sections": {
+    "emptyMessage": "Vous n'avez aucune section pour le moment"
   }
 }

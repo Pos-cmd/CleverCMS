@@ -5,9 +5,6 @@ import { $t } from '@/locales'
 <template>
   <PageWrapper :title="$t('route.home')" content="Voici le contenue" :is-title-bottom-back="true">
     <ExceptionBase type="maintenance" />
-    <template #rightFooter>
-      left
-    </template>
   </PageWrapper>
 </template>
 

@@ -75,5 +75,14 @@
     "resetPwd": {
       "title": "Reset Password"
     }
+  },
+  "menus": {
+    "emptyMessage": "You have no menu"
+  },
+  "notification": {
+    "emptyMessage": "No notifications yet"
+  },
+  "pages": {
+    "emptyMessage": "You have no pages"
   }
 }

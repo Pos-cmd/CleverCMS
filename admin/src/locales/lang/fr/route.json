@@ -2,9 +2,23 @@
   "403": "pas-d'autorisation",
   "404": "non-trouvé",
   "500": "erreur-serveur",
+  "account": "Mon compte",
+  "blocks": "Blocs",
+  "group": {
+    "contentManagement": "Gestion de contenu",
+    "userManagement": "Gestion des utilisateurs"
+  },
   "hi": "Salutation",
   "home": "Accueil",
   "login": "Connexion",
   "logout": "Déconnexion",
-  "roles": "Rôles"
+  "menus": "Menus",
+  "notification": "Notifications",
+  "pages": "Pages",
+  "permissions": "Permissions",
+  "roles": "Rôles",
+  "sections": "Sections",
+  "setting": "Paramétre",
+  "settings": "Paramètres",
+  "users": "Utilisateurs"
 }
