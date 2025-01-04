@@ -166,8 +166,18 @@ const routeMap: RouteMap = {
   "403": "/403",
   "404": "/404",
   "500": "/500",
+  "account": "/account",
+  "blocks": "/blocks",
   "home": "/home",
-  "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?"
+  "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?",
+  "menus": "/menus",
+  "notification": "/notification",
+  "pages": "/pages",
+  "permissions": "/permissions",
+  "roles": "/roles",
+  "sections": "/sections",
+  "setting": "/setting",
+  "users": "/users"
 };
 
 /**

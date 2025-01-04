@@ -40,6 +40,33 @@ export const generatedRoutes: GeneratedRoute[] = [
     }
   },
   {
+    name: 'account',
+    path: '/account',
+    component: 'layout.base$view.account',
+    meta: {
+      title: 'account',
+      i18nKey: 'route.account',
+      order: 98,
+      icon: 'ph:user-gear-duotone'
+    }
+  },
+  {
+    name: 'blocks',
+    path: '/blocks',
+    component: 'layout.base$view.blocks',
+    meta: {
+      title: 'blocks',
+      i18nKey: 'route.blocks',
+      icon: 'ph:cube-duotone',
+      order: 4,
+      group: {
+        name: 'content',
+        i18nKey: 'route.group.contentManagement',
+        order: 1
+      }
+    }
+  },
+  {
     name: 'home',
     path: '/home',
     component: 'layout.base$view.home',
@@ -60,6 +87,125 @@ export const generatedRoutes: GeneratedRoute[] = [
       i18nKey: 'route.login',
       constant: true,
       hideInMenu: true
+    }
+  },
+  {
+    name: 'menus',
+    path: '/menus',
+    component: 'layout.base$view.menus',
+    meta: {
+      title: 'menus',
+      i18nKey: 'route.menus',
+      icon: 'ph:link-simple-duotone',
+      order: 2,
+      group: {
+        name: 'content',
+        i18nKey: 'route.group.contentManagement',
+        order: 1
+      }
+    }
+  },
+  {
+    name: 'notification',
+    path: '/notification',
+    component: 'layout.base$view.notification',
+    meta: {
+      title: 'notification',
+      i18nKey: 'route.notification',
+      icon: 'ph:bell-duotone',
+      order: 97,
+    }
+  },
+  {
+    name: 'pages',
+    path: '/pages',
+    component: 'layout.base$view.pages',
+    meta: {
+      title: 'pages',
+      i18nKey: 'route.pages',
+      icon: 'ph:file-text-duotone',
+      order: 1,
+      group: {
+        name: 'content',
+        i18nKey: 'route.group.contentManagement',
+        order: 1
+      }
+    }
+  },
+  {
+    name: 'permissions',
+    path: '/permissions',
+    component: 'layout.base$view.permissions',
+    meta: {
+      title: 'permissions',
+      i18nKey: 'route.permissions',
+      icon: 'ph:key-duotone',
+      order: 3,
+      divider: true,
+      group: {
+        name: 'user',
+        i18nKey: 'route.group.userManagement',
+        order: 2,
+      }
+    }
+  },
+  {
+    name: 'roles',
+    path: '/roles',
+    component: 'layout.base$view.roles',
+    meta: {
+      title: 'roles',
+      i18nKey: 'route.roles',
+      icon: 'ph:shield-duotone',
+      order: 2,
+      group: {
+        name: 'user',
+        i18nKey: 'route.group.userManagement',
+        order: 2
+      }
+    }
+  },
+  {
+    name: 'sections',
+    path: '/sections',
+    component: 'layout.base$view.sections',
+    meta: {
+      title: 'sections',
+      i18nKey: 'route.sections',
+      icon: 'ph:layout-duotone',
+      order: 3,
+      group: {
+        name: 'content',
+        i18nKey: 'route.group.contentManagement',
+        order: 1
+      }
+    }
+  },
+  {
+    name: 'setting',
+    path: '/setting',
+    component: 'layout.base$view.setting',
+    meta: {
+      title: 'setting',
+      i18nKey: 'route.setting',
+      icon: 'ph:gear-duotone',
+      order: 99
+    }
+  },
+  {
+    name: 'users',
+    path: '/users',
+    component: 'layout.base$view.users',
+    meta: {
+      title: 'users',
+      i18nKey: 'route.users',
+      icon: 'ph:user-duotone',
+      order: 1,
+      group: {
+        name: 'user',
+        i18nKey: 'route.group.userManagement',
+        order: 2
+      }
     }
   }
 ];
