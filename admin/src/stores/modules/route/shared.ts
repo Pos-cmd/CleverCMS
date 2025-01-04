@@ -85,6 +85,11 @@ export function getGlobalMenusByAuthRoutes(routes: ElegantConstRoute[]): App.Glo
 
     const menu = getGlobalMenuByBaseRoute(route);
 
+    // Définir groupOrder pour les menus non groupés
+    if (!route.meta?.group) {
+      menu.groupOrder = route.meta?.order || 0;
+    }
+
     // Gestion des enfants
     if (route.children?.some(child => !child.meta?.hideInMenu)) {
       menu.children = getGlobalMenusByAuthRoutes(route.children);
@@ -122,6 +127,7 @@ export function getGlobalMenusByAuthRoutes(routes: ElegantConstRoute[]): App.Glo
     }
   });
 
+  // console.log({ result })
 
   // Tri final des groupes
   return result.sort((a, b) => (a.groupOrder || 0) - (b.groupOrder || 0));
