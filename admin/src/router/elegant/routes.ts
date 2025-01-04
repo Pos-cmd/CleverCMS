@@ -57,7 +57,7 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'blocks',
       i18nKey: 'route.blocks',
-      icon: 'ph:cube-duotone',
+      icon: 'ph:stack-duotone',
       order: 4,
       group: {
         name: 'content',
@@ -74,7 +74,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'home',
       i18nKey: 'route.home',
       icon: 'ph:desktop-duotone',
-      order: 1,
+      order: 1
     }
   },
   {
@@ -113,7 +113,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'notification',
       i18nKey: 'route.notification',
       icon: 'ph:bell-duotone',
-      order: 97,
+      order: 97
     }
   },
   {
@@ -145,7 +145,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       group: {
         name: 'user',
         i18nKey: 'route.group.userManagement',
-        order: 2,
+        order: 2
       }
     }
   },
