@@ -1,4 +1,6 @@
+import { FormSchema } from '@/components/FormBuilder'
 import { DefaultStatus } from '@/enums/default_status'
+import { SelectOption } from 'naive-ui'
 
 /**
  * @description: User info interface
@@ -116,4 +118,46 @@ export interface IRouteMeta {
   fixedIndexInTab?: number | null
   /** if set query parameters, it will be automatically carried when entering the route */
   query?: { key: string; value: string }[] | null
+}
+
+export interface IFieldConfig {
+  title: string
+  description?: string
+  required: boolean
+  default?: 'none' | 'default'
+  defaultValue?: string
+  textarea?: boolean
+  localization?: boolean
+  time?: boolean
+  baseField?: string // Champ pour stocker la référence au champ plainText source
+}
+
+export interface IFieldOption extends SelectOption {
+  label: string
+  value: string
+  icon: string
+  show?: boolean
+  schemas?: FormSchema[]
+}
+
+export interface IField {
+  order: number
+  type: string
+  label: string
+  name: string
+  required: boolean
+  options: any[]
+  isEditing?: boolean
+  config: IFieldConfig
+  schemas: FormSchema[]
+}
+
+export interface IBlockType {
+  id: number
+  title: string
+  description: string
+  fields: IField[]
+  status: DefaultStatus
+  createdAt: string
+  updatedAt: string
 }
