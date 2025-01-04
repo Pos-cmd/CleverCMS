@@ -1,5 +1,5 @@
 import type { FormItemRule } from 'naive-ui'
-import { t } from '~/locales'
+import { $t } from '@/locales'
 import type { ComponentType } from './types/index.js'
 
 /**
@@ -13,9 +13,9 @@ export function createPlaceholderMessage(component?: ComponentType) {
       component
     )
   )
-    return t('form.placeholder.select')
+    return $t('form.placeholder.select')
 
-  return t('form.placeholder.input')
+  return $t('form.placeholder.input')
 }
 
 const DATE_TYPE = ['DatePicker', 'MonthPicker', 'WeekPicker', 'TimePicker']

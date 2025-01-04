@@ -193,7 +193,7 @@ export default defineComponent({
   props: {
     ...basicProps,
   },
-  emits: ['reset', 'submit', 'register'],
+  emits: ['reset', 'submit', 'register', 'update:model'],
   setup(props, { emit, attrs }) {
     const { smaller, SizeEnum } = useBreakpoint()
 
@@ -533,6 +533,15 @@ export default defineComponent({
       {
         immediate: true,
       },
+    )
+
+    // Ajouter un watcher pour émettre les changements de modèle
+    watch(
+      () => formModel,
+      (newValue) => {
+        emit('update:model', newValue)
+      },
+      { deep: true }
     )
 
     onMounted(() => {

@@ -20,6 +20,7 @@ import {
 } from 'naive-ui'
 import type { Component } from 'vue'
 import type { ComponentType } from './types/index.js'
+import SwitchTab from '@/components/SwitchTab/index.vue'
 
 /**
  * Component list, register here to setting it in the form
@@ -51,6 +52,8 @@ componentMap.set('NColorPicker', NColorPicker)
 
 componentMap.set('NUpload', NUpload)
 componentMap.set('NDivider', NDivider)
+
+componentMap.set('SwitchTab', SwitchTab)
 
 export function add(compName: ComponentType, component: Component) {
   componentMap.set(compName, component)
