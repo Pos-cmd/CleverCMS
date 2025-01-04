@@ -1,5 +1,10 @@
 {
   "back": "Back",
+  "create": {
+    "blocks": "Add a block",
+    "menus": "Add a menu",
+    "sections": "Add a section"
+  },
   "go": "Go",
   "yes": "Yes"
 }

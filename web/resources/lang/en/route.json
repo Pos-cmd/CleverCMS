@@ -2,7 +2,11 @@
   "403": "no-authorization",
   "404": "not found",
   "500": "server-error",
+  "account": "My account",
   "hi": "Greeting",
   "home": "Welcome",
-  "login": "Connection"
+  "login": "Connection",
+  "notification": "Notifications",
+  "permissions": "Permissions",
+  "setting": "Setting"
 }
