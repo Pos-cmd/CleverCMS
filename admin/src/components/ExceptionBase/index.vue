@@ -5,9 +5,25 @@ import { computed } from 'vue';
 
 defineOptions({ name: 'ExceptionBase' })
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  showBackButton: false,
+})
 
-type ExceptionType = '403' | '404' | '500' | 'maintenance'
+type ExceptionType = 
+  '403' 
+  | '404' 
+  | '500' 
+  | 'maintenance' 
+  | 'section' 
+  | 'page' 
+  | 'block' 
+  | 'menu'
+  | 'users'
+  | 'role'
+  | 'permission'
+  | 'account'
+  | 'notification'
+  | 'setting'
 
 interface Props {
   /**
@@ -19,6 +35,8 @@ interface Props {
    * - maintenance: page under contruction
    */
   type: ExceptionType
+  showBackButton?: boolean,
+  description?: string
 }
 
 const { routerPushByKey } = useRouterPush()
@@ -28,6 +46,16 @@ const iconMap: Record<ExceptionType, string> = {
   404: 'not-found',
   500: 'service-error',
   maintenance: 'maintenance',
+  section: 'content-section',
+  page: 'content-page',
+  block: 'content-block',
+  menu: 'content-menu',
+  users: 'user-list',
+  role: 'user-role',
+  permission: 'user-permission',
+  account: 'system-account',
+  notification: 'system-notification',
+  setting: 'system-setting',
 }
 
 const icon = computed(() => iconMap[props.type])
@@ -38,9 +66,12 @@ const icon = computed(() => iconMap[props.type])
     <div class="flex text-400px text-primary">
       <SvgIcon :local-icon="icon" />
     </div>
-    <NButton type="primary" @click="routerPushByKey('root')">
-      {{ $t('common.backToHome') }}
-    </NButton>
+    <div class="text-sm text-center text-gray-500">{{ props.description }}</div>
+    <slot name="extra">
+      <NButton v-if="showBackButton" type="primary" @click="routerPushByKey('root')">
+        {{ $t('common.backToHome') }}
+      </NButton>
+    </slot>
   </div>
 </template>
 
