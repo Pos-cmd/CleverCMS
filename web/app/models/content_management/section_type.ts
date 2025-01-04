@@ -11,8 +11,6 @@ export default class SectionType extends BaseModel {
   @column()
   declare fields: string
   @column()
-  declare defaultContent: string
-  @column()
   declare isActive: boolean
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

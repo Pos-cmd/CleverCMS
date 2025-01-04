@@ -13,8 +13,6 @@ export default class BlockType extends BaseModel {
   @column()
   declare fields: any
   @column()
-  declare defaultContent: any
-  @column()
   declare isActive: boolean
 
   @column.dateTime({ autoCreate: true })

@@ -45,4 +45,28 @@ export default class SectionsController {
       this.apiService.resultSuccess(null, { message: i18n.t('sys.api.section.deleted') })
     )
   }
+
+  public async attachBlock({ request, response, i18n, params }: HttpContext) {
+    const page = await Section.findOrFail(params.id)
+
+    const blockId = request.input('blockId')
+
+    await page.related('blocks').attach(blockId)
+
+    return response.ok(
+      this.apiService.resultSuccess(page, { message: i18n.t('sys.api.page.sectionAttached') })
+    )
+  }
+
+  public async detachBlock({ request, response, i18n, params }: HttpContext) {
+    const page = await Section.findOrFail(params.id)
+
+    const blockId = request.input('blockId')
+
+    await page.related('blocks').detach(blockId)
+
+    return response.ok(
+      this.apiService.resultSuccess(page, { message: i18n.t('sys.api.page.sectionDetached') })
+    )
+  }
 }

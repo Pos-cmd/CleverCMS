@@ -13,6 +13,9 @@ export default class extends BaseSchema {
       table.json('custom_content').nullable()
       table.timestamp('created_at').notNullable().defaultTo(this.now())
       table.timestamp('updated_at').notNullable().defaultTo(this.now())
+
+      table.foreign('page_id').references('pages.id').onDelete('CASCADE')
+      table.foreign('section_id').references('sections.id').onDelete('CASCADE')
     })
   }
 

@@ -1,5 +1,5 @@
-import { BaseModel, belongsTo, column, hasMany, manyToMany } from '@adonisjs/lucid/orm'
-import type { BelongsTo, HasMany, ManyToMany } from '@adonisjs/lucid/types/relations'
+import { BaseModel, belongsTo, column, manyToMany } from '@adonisjs/lucid/orm'
+import type { BelongsTo, ManyToMany } from '@adonisjs/lucid/types/relations'
 import { DateTime } from 'luxon'
 import Block from './block.js'
 import Page from './page.js'
@@ -35,6 +35,9 @@ export default class Section extends BaseModel {
   declare pages: ManyToMany<typeof Page>
   @belongsTo(() => SectionType)
   declare sectionType: BelongsTo<typeof SectionType>
-  @hasMany(() => Block)
-  declare blocks: HasMany<typeof Block>
+  @manyToMany(() => Block, {
+    pivotTable: 'section_blocks',
+    pivotColumns: ['is_active', 'order', 'custom_content'],
+  })
+  declare blocks: ManyToMany<typeof Block>
 }

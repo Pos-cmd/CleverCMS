@@ -78,7 +78,6 @@ export const sectionTypeValidator = vine.compile(
     name: vine.string().minLength(4).trim(),
     description: vine.string().trim(),
     fields: vine.string(),
-    defaultContent: vine.string(),
     isActive: vine.boolean(),
   })
 )
@@ -146,7 +145,6 @@ export const blockTypeValidator = vine.compile(
     name: vine.string().minLength(4).trim(),
     description: vine.string(),
     fields: vine.string(),
-    defaultContent: vine.string(),
     isActive: vine.boolean(),
   })
 )
