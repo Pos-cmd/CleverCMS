@@ -1,4 +1,7 @@
 {
+  "blocks": {
+    "emptyMessage": "You have no blocks at the moment"
+  },
   "home": {
     "branchDesc": "To make it easier to develop and update merges, we simplified the main branch code by retaining only the home menu. \nThe rest of the content has been moved to the example branch for maintenance. \nThe preview displays the contents of the sample branch.",
     "creativity": "Creativity",
@@ -84,5 +87,8 @@
   },
   "pages": {
     "emptyMessage": "You have no pages"
+  },
+  "sections": {
+    "emptyMessage": "You have no sections at the moment"
   }
 }

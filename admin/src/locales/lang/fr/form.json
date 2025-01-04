@@ -1,7 +1,34 @@
 {
+  "baseField": "Basé sur",
+  "builder": {
+    "label": {
+      "newField": "Nouveau champ",
+      "subTitle": "Sous titre",
+      "title": "Titre"
+    },
+    "type": {
+      "date": "Date",
+      "divider": "Séparateur",
+      "file": "Fichier",
+      "formattedText": "Texte formaté",
+      "image": "Image",
+      "link": "Lien",
+      "number": "Nombre",
+      "option": "Option",
+      "plainText": "Texte",
+      "relation": "Relation",
+      "slug": "Slug",
+      "toggle": "Toggle",
+      "video": "Vidéo"
+    }
+  },
   "code": {
     "invalid": "Le format du code de vérification est incorrect",
     "required": "Veuillez entrer le code de vérification"
+  },
+  "common": {
+    "no": "Non",
+    "yes": "Oui"
   },
   "component": {
     "collapse": "Réduire",
@@ -11,6 +38,7 @@
     "invalid": "Les deux mots de passe sont différents",
     "required": "Veuillez entrer le mot de passe à nouveau"
   },
+  "description": "Description",
   "email": {
     "invalid": "Le format de l'email est incorrect",
     "required": "Veuillez entrer l'email"
@@ -19,10 +47,13 @@
     "invalid": "le prénom est invalide - il doit contenir entre 4 et 16 caractères",
     "required": "Veuillez entrer le prénom"
   },
+  "isRequired": "Obligatoire",
   "lastname": {
     "invalid": "le nom est invalide - il doit contenir entre 4 et 16 caractères",
     "required": "Veuillez entrer le nom"
   },
+  "multiLang": "Multi-lang",
+  "name": "Nom",
   "phone": {
     "invalid": "Le format du numéro de téléphone est incorrect",
     "required": "Veuillez entrer le numéro de téléphone"
@@ -36,8 +67,12 @@
     "required": "Veuillez entrer le mot de passe"
   },
   "required": "Ne peut pas être vide",
+  "textarea": "Zone de texte",
+  "time": "Heure",
+  "title": "Titre",
   "userName": {
     "invalid": "Le format du nom d'utilisateur est incorrect",
     "required": "Veuillez entrer le nom d'utilisateur"
-  }
+  },
+  "value": "Valeur"
 }
