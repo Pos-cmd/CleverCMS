@@ -1,4 +1,9 @@
 {
+  "builder": {
+    "type": {
+      "link": "Lien"
+    }
+  },
   "code": {
     "invalid": "Le format du code de vérification est incorrect",
     "required": "Veuillez entrer le code de vérification"

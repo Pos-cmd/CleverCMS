@@ -1,10 +1,13 @@
 {
   "back": "Back",
+  "cancel": "Cancel",
   "create": {
     "blocks": "Add a block",
     "menus": "Add a menu",
+    "pages": "Add a page",
     "sections": "Add a section"
   },
   "go": "Go",
+  "save": "To safeguard",
   "yes": "Yes"
 }

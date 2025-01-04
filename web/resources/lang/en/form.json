@@ -1,7 +1,32 @@
 {
+  "builder": {
+    "label": {
+      "newField": "New field",
+      "subTitle": "Subtitle",
+      "title": "Title"
+    },
+    "type": {
+      "date": "Date",
+      "divider": "Separator",
+      "file": "File",
+      "formattedText": "Formatted text",
+      "image": "Picture",
+      "link": "Link",
+      "number": "Number",
+      "option": "Option",
+      "plainText": "Text",
+      "relation": "Relationship",
+      "toggle": "Toggle",
+      "video": "Video"
+    }
+  },
   "code": {
     "invalid": "Verification code format is incorrect",
     "required": "Please enter verification code"
+  },
+  "common": {
+    "no": "No",
+    "yes": "Yes"
   },
   "component": {
     "collapse": "Reduce",
@@ -11,17 +36,22 @@
     "invalid": "The two passwords are different",
     "required": "Please enter the password again"
   },
+  "description": "Description",
   "email": {
     "invalid": "Email format is incorrect",
     "required": "Please enter email"
   },
   "firstname": {
-    "invalid": "the first name is invalid - it must contain between 4 and 16 characters"
+    "invalid": "the first name is invalid - it must contain between 4 and 16 characters",
+    "required": "Please enter first name"
   },
+  "isRequired": "Mandatory",
   "lastname": {
     "invalid": "the name is invalid - it must contain between 4 and 16 characters",
     "required": "Please enter name"
   },
+  "multiLang": "Multi-language",
+  "name": "Name",
   "phone": {
     "invalid": "Phone number format is incorrect",
     "required": "Please enter phone number"
@@ -35,8 +65,12 @@
     "required": "Please enter password"
   },
   "required": "Cannot be empty",
+  "textarea": "Text box",
+  "time": "Hour",
+  "title": "Title",
   "userName": {
     "invalid": "Username format is incorrect",
     "required": "Please enter username"
-  }
+  },
+  "value": "Value"
 }

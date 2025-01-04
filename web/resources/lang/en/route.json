@@ -3,10 +3,20 @@
   "404": "not found",
   "500": "server-error",
   "account": "My account",
+  "blocks": "Blocks",
+  "group": {
+    "contentManagement": "Content management",
+    "userManagement": "User management"
+  },
   "hi": "Greeting",
   "home": "Welcome",
   "login": "Connection",
+  "menus": "Menus",
   "notification": "Notifications",
+  "pages": "Pages",
   "permissions": "Permissions",
-  "setting": "Setting"
+  "sections": "Sections",
+  "setting": "Setting",
+  "settings": "Settings",
+  "users": "Users"
 }
