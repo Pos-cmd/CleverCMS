@@ -17,6 +17,7 @@
   "commentTranslate.hover.enabled": false,
   "commentTranslate.browse.mode": "inplace",
   "conventionalCommits.scopes": [
-    "admin"
+    "admin",
+    "web"
   ]
 }
