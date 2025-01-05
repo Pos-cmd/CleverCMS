@@ -140,12 +140,21 @@ export const blockValidator = vine.compile(
 | BlockType Validator
 |--------------------------------------------------------------------------
 */
-export const blockTypeValidator = vine.compile(
+export const createBlockTypeValidator = vine.compile(
   vine.object({
     name: vine.string().minLength(4).trim(),
-    description: vine.string(),
+    description: vine.string().nullable(),
     fields: vine.string(),
     isActive: vine.boolean(),
+  })
+)
+
+export const updateBlockTypeValidator = vine.compile(
+  vine.object({
+    name: vine.string().minLength(4).trim().optional().nullable(),
+    description: vine.string().optional().nullable(),
+    fields: vine.string().optional().nullable(),
+    isActive: vine.boolean().optional().nullable(),
   })
 )
 

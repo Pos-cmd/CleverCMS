@@ -37,6 +37,8 @@ router
         sectionTypeRoute()
         seoMetaRoute()
       })
+      .as('content_management')
+      .prefix('/content-management')
       .use(middleware.auth({ guards: ['api'] }))
   })
   .prefix('/api')

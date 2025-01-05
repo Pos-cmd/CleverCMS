@@ -10,8 +10,6 @@ export default class Block extends BaseModel {
   @column()
   declare blockTypeId: number
   @column()
-  declare sectionId: number
-  @column()
   declare name: string
   @column()
   declare title: string
@@ -21,8 +19,6 @@ export default class Block extends BaseModel {
   declare content: any
   @column()
   declare isActive: boolean
-  @column()
-  declare order: number
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
