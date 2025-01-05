@@ -216,17 +216,18 @@ const BlockType = {
     const queryCache = useQueryCache()
 
     return useMutation({
-      mutation: (data: IStoreBlockTypeParams) => {
-        const payLoad = {
-          description: data.description || '',
-          fields: JSON.stringify(data.fields),
-          isActive: data.isActive,
-          name: data.name,
-          title: data.title
-        } as IStoreBlockTypeParams
+      mutation: (data: IStoreBlockTypeParams) => createBlockType(data),
+      // {
+      //   const payLoad = {
+      //     description: data.description || '',
+      //     fields: JSON.stringify(data.fields),
+      //     isActive: data.isActive,
+      //     name: data.name,
+      //     title: data.title
+      //   } as IStoreBlockTypeParams
 
-        return createBlockType(payLoad)
-      },
+      //   return createBlockType(payLoad)
+      // },
       onMutate: (data: IStoreBlockTypeParams) => {
         window.$loadingBar.start()
         // return previous block types to reuse in case of error
@@ -256,17 +257,18 @@ const BlockType = {
     const queryCache = useQueryCache()
 
     return useMutation({
-      mutation: ({ id, ...data }: IUpdateBlockTypeParams) => {
-        const payLoad = {
-          description: data.description || '',
-          fields: JSON.stringify(data.fields),
-          isActive: data.isActive,
-          name: data.name,
-          title: data.title
-        } as IStoreBlockTypeParams
+      mutation: ({ id, ...data }: IUpdateBlockTypeParams) => updateBlockType(id, data),
+      // {
+      //   const payLoad = {
+      //     description: data.description || '',
+      //     fields: JSON.stringify(data.fields),
+      //     isActive: data.isActive,
+      //     name: data.name,
+      //     title: data.title
+      //   } as IStoreBlockTypeParams
 
-        return updateBlockType(id, payLoad)
-      },
+      //   return updateBlockType(id, payLoad)
+      // },
       onMutate: ({ id, ...data }: IUpdateBlockTypeParams) => {
         window.$loadingBar.start()
         // return previous block types to reuse in case of error
