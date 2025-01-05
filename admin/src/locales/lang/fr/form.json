@@ -8,6 +8,7 @@
     },
     "newBlock": "Nouveau bloc",
     "type": {
+      "color": "Couleur",
       "date": "Date",
       "divider": "Séparateur",
       "file": "Fichier",
@@ -18,7 +19,10 @@
       "option": "Option",
       "plainText": "Texte",
       "relation": "Relation",
+      "select": "Sélection",
       "slug": "Slug",
+      "switch": "Switch",
+      "time": "Heure",
       "toggle": "Toggle",
       "video": "Vidéo"
     }

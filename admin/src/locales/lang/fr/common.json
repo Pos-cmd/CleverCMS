@@ -2,6 +2,8 @@
   "action": "Action",
   "actions": {
     "add": "Ajouter",
+    "disable": "Désactiver",
+    "enable": "Activer",
     "search": "Rechercher..."
   },
   "add": "Ajouter",
