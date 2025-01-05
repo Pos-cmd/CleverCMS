@@ -149,15 +149,32 @@ export interface IField {
   options: any[]
   isEditing?: boolean
   config: IFieldConfig
+  canBeDuplicate?: boolean
+  canBeDeleted?: boolean
   schemas: FormSchema[]
 }
 
-export interface IBlockType {
+export interface IBasicCollectionType {
   id: number
-  title: string
+  name: string
   description: string
   fields: IField[]
-  status: DefaultStatus
+  isActive: boolean
+  createdAt: string
+  updatedAt: string
+}
+
+export interface IBlockType extends IBasicCollectionType {}
+
+export interface IBlock {
+  id: number
+  name: string
+  title: string
+  slug: string
+  blockTypeId: number
+  blockType: IBlockType
+  content: Record<string, any>
+  isActive: boolean
   createdAt: string
   updatedAt: string
 }
