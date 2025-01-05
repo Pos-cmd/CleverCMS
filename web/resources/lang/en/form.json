@@ -1,10 +1,12 @@
 {
+  "baseField": "Based on",
   "builder": {
     "label": {
       "newField": "New field",
       "subTitle": "Subtitle",
       "title": "Title"
     },
+    "newBlock": "New block",
     "type": {
       "date": "Date",
       "divider": "Separator",
@@ -16,6 +18,7 @@
       "option": "Option",
       "plainText": "Text",
       "relation": "Relationship",
+      "slug": "Slug",
       "toggle": "Toggle",
       "video": "Video"
     }

@@ -3,11 +3,17 @@
   "cancel": "Cancel",
   "create": {
     "blocks": "Add a block",
+    "collections": "Add a collection",
+    "item": "Create an item",
     "menus": "Add a menu",
     "pages": "Add a page",
     "sections": "Add a section"
   },
+  "delete": "DELETE",
+  "duplicate": "Duplicate",
+  "edit": "To modify",
   "go": "Go",
   "save": "To safeguard",
+  "toggleActive": "enable/disable",
   "yes": "Yes"
 }

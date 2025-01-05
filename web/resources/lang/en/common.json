@@ -1,9 +1,14 @@
 {
   "action": "Action",
+  "actions": {
+    "add": "Add",
+    "search": "To research..."
+  },
   "add": "Add",
   "addSuccess": "Addition Successful",
   "backToHome": "Back to home",
   "batchDelete": "Batch delete",
+  "byDefault": "By default",
   "cancel": "Cancel",
   "cancelText": "Cancel",
   "check": "Check",

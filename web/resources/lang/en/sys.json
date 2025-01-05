@@ -2,6 +2,11 @@
   "api": {
     "apiRequestFailed": "Interface request failed, please try again later!",
     "apiTimeoutMessage": "The interface query timed out, please refresh the page and try again!",
+    "blockType": {
+      "created": "Type of block created",
+      "deletedSuccess": "successfully deleted"
+    },
+    "deletedSuccess": "successfully deleted",
     "errMsg401": "User does not have authorization (token, username or password error)!",
     "errMsg403": "The user is authorized, but access is prohibited!",
     "errMsg404": "Network request error, resource was not found!",
@@ -25,13 +30,19 @@
       "updated": "Page updated successfully"
     },
     "successTip": "Success Tip",
-    "timeoutMessage": "Connection time expired, please log in again!"
+    "timeoutMessage": "Connection time expired, please log in again!",
+    "updatedSuccess": "Successful update"
   },
   "app": {
     "desc": "Clever CMS - Vue3 Naive-ui UnoCss",
     "logoutMessage": "Do you confirm system exit?",
     "logoutTip": "Reminder",
     "menuLoading": "Loading menu..."
+  },
+  "common": {
+    "createSuccess": "Successful creation",
+    "deleteSuccess": "Deletion successful",
+    "updateSuccess": "Successful update"
   },
   "errorLog": {
     "enableMessage": "Effective only when useErrorHandle=true in `/src/settings/projectSetting.ts`.",

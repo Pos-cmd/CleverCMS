@@ -4,6 +4,7 @@
   "500": "server-error",
   "account": "My account",
   "blocks": "Blocks",
+  "collections": "Collections",
   "group": {
     "contentManagement": "Content management",
     "userManagement": "User management"

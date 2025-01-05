@@ -2,6 +2,11 @@
   "api": {
     "apiRequestFailed": "La requête de l'interface a échoué, veuillez réessayer plus tard !",
     "apiTimeoutMessage": "Le délai de requête de l'interface a expiré, veuillez actualiser la page et réessayer !",
+    "blockType": {
+      "created": "Type de bloc créé",
+      "deletedSuccess": "supprimé avec succès"
+    },
+    "deletedSuccess": "supprimé avec succès",
     "errMsg401": "L'utilisateur n'a pas l'autorisation (erreur de token, de nom d'utilisateur ou de mot de passe) !",
     "errMsg403": "L'utilisateur est autorisé, mais l'accès est interdit !",
     "errMsg404": "Erreur de requête réseau, la ressource n'a pas été trouvée !",
@@ -25,7 +30,8 @@
       "updated": "Page mise à jour avec succès"
     },
     "successTip": "Conseil de réussite",
-    "timeoutMessage": "Temps de connexion écoulé, veuillez vous reconnecter !"
+    "timeoutMessage": "Temps de connexion écoulé, veuillez vous reconnecter !",
+    "updatedSuccess": "Mise à jour réussie"
   },
   "app": {
     "logoutMessage": "Confirmez-vous la sortie du système ?",
