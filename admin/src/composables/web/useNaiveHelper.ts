@@ -1,5 +1,4 @@
-import { MenuOption, NIcon } from "naive-ui"
-import SvgIcon from '@/components/SvgIcon/index.vue'
+import { NIcon } from "naive-ui"
 
 export function useNaiveHelper () {
   const renderIcon = (icon: string)  => {
