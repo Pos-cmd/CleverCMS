@@ -36,6 +36,7 @@ const emit = defineEmits<{
   (e: 'edit:end'): void
 }>()
 
+const inputRef = ref<InstanceType<typeof NInput> | null>(null)
 const isEditing = ref(false)
 const inputValue = ref(props.modelValue)
 
@@ -46,8 +47,7 @@ const handleStartEdit = () => {
   isEditing.value = true
   emit('edit:start')
   nextTick(() => {
-    const input = document.querySelector('.editable-input') as HTMLInputElement
-    if (input) input.focus()
+    if (inputRef.value) inputRef.value.focus()
   })
 }
 
@@ -78,12 +78,20 @@ const handleKeydown = (event: KeyboardEvent) => {
 watch(() => props.modelValue, (newValue) => {
   inputValue.value = newValue
 })
+
+defineExpose({
+  isEditing,
+  inputValue,
+  handleStartEdit,
+  handleEndEdit
+})
 </script>
 
 <template>
   <div :class="containerClass">
     <template v-if="isEditing">
       <n-input
+        ref="inputRef"
         v-model:value="inputValue"
         :size="size"
         :class="['editable-input', inputClass]"
