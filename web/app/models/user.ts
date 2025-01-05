@@ -4,7 +4,7 @@ import { DbAccessTokensProvider } from '@adonisjs/auth/access_tokens'
 import { withAuthFinder } from '@adonisjs/auth/mixins/lucid'
 import { compose } from '@adonisjs/core/helpers'
 import hash from '@adonisjs/core/services/hash'
-import { BaseModel, column, hasMany, hasOne } from '@adonisjs/lucid/orm'
+import { BaseModel, column, computed, hasMany, hasOne } from '@adonisjs/lucid/orm'
 import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
 import { MorphMap, Permission, Role } from '@holoyan/adonisjs-permissions'
 import { AclModelInterface } from '@holoyan/adonisjs-permissions/types'
@@ -31,6 +31,11 @@ export default class User extends compose(BaseModel, AuthFinder) implements AclM
 
   @column()
   declare lastname: string | null
+
+  @computed()
+  get fullname() {
+    return `${this.firstname} ${this.lastname}`
+  }
 
   @column()
   declare email: string
