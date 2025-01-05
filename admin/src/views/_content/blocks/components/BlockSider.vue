@@ -5,7 +5,7 @@ import { $t } from '@/locales'
 import { API } from '@/services/api'
 import type { IStoreBlockTypeParams, IUpdateBlockTypeParams } from '@/services/api/content_management/block/types'
 import MetaPagination from '@/shared/MetaPagination/index.vue'
-import FieldBuilder from '@/shared/modals/FieldBuilder.vue'
+import FieldBuilder from '@/shared/modals/FieldBuilder/index.vue'
 
 const props = defineProps<{
   selectedKey: number | null
