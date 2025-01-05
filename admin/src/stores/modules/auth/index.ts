@@ -82,7 +82,7 @@ export const useAuthStore = defineStore(SetupStoreId.User,{
       //@ts-expect-error
       this.userInfo = {
         ...info,
-        fullName: `${info?.firstname || ''} ${info?.lastname || ''}`,
+        // fullName: `${info?.firstname || ''} ${info?.lastname || ''}`,
         avatar: info?.avatar || `https://api.dicebear.com/9.x/open-peeps/svg?seed=${info?.email}`,
       }
       this.lastUpdateTime = new Date().getTime()
