@@ -58,7 +58,7 @@ function handleDropdown(key: DropdownKey) {
     <div>
       <ButtonIcon>
         <NAvatar :src="userStore.getUserInfo.avatar" size="small" round class="text-icon-large" />
-        <span class="text-16px font-medium">{{ userStore.getUserInfo.fullName }}</span>
+        <span class="text-16px font-medium">{{ userStore.getUserInfo.fullname }}</span>
       </ButtonIcon>
     </div>
   </NDropdown>
