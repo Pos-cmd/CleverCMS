@@ -4,11 +4,16 @@
   "create": {
     "blocks": "Ajouter un bloc",
     "collections": "Ajouter une collection",
+    "item": "Créer un élément",
     "menus": "Ajouter un menu",
     "pages": "Ajouter une page",
     "sections": "Ajouter une section"
   },
+  "delete": "Supprimer",
+  "duplicate": "Dupliquer",
+  "edit": "Modifier",
   "go": "Aller",
   "save": "Sauvegarder",
+  "toggleActive": "activer/désactiver",
   "yes": "Oui"
 }

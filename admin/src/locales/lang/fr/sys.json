@@ -28,6 +28,11 @@
     "logoutTip": "Rappel",
     "menuLoading": "Chargement du menu..."
   },
+  "common": {
+    "createSuccess": "Création réussie",
+    "deleteSuccess": "Suppression réussie",
+    "updateSuccess": "Mise à jour réussie"
+  },
   "errorLog": {
     "enableMessage": "Effectif uniquement lorsque useErrorHandle=true dans `/src/settings/projectSetting.ts`.",
     "fireAjaxError": "Déclencher une erreur Ajax",

@@ -1,6 +1,11 @@
 {
   "blocks": {
-    "emptyMessage": "Vous n'avez aucun bloc pour le moment"
+    "deleteMessage": "Êtes-vous sûr de vouloir supprimer ce bloc ?",
+    "deleteTitle": "Supprimer le bloc",
+    "emptyMessage": "Aucun bloc",
+    "items": {
+      "emptyMessage": "Aucun élément { name }"
+    }
   },
   "collections": {
     "emptyMessage": "Aucune collection"

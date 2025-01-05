@@ -1,6 +1,14 @@
 {
   "blocks": {
-    "emptyMessage": "You have no blocks at the moment"
+    "deleteMessage": "Are you sure you want to delete this block?",
+    "deleteTitle": "Delete block",
+    "emptyMessage": "No block",
+    "items": {
+      "emptyMessage": "No element { name }"
+    }
+  },
+  "collections": {
+    "emptyMessage": "No collection"
   },
   "home": {
     "branchDesc": "To make it easier to develop and update merges, we simplified the main branch code by retaining only the home menu. \nThe rest of the content has been moved to the example branch for maintenance. \nThe preview displays the contents of the sample branch.",

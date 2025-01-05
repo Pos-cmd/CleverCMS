@@ -1,5 +1,9 @@
 {
   "action": "Action",
+  "actions": {
+    "add": "Ajouter",
+    "search": "Rechercher..."
+  },
   "add": "Ajouter",
   "addSuccess": "Ajout Réussi",
   "backToHome": "Retour à l'accueil",
