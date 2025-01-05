@@ -38,6 +38,9 @@ importers:
       '@iconify/vue':
         specifier: ^4.2.0
         version: 4.2.0(vue@3.5.13(typescript@5.7.2))
+      '@pinia/colada':
+        specifier: ^0.13.2
+        version: 0.13.2(pinia@2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))
       '@vueuse/core':
         specifier: ^10.11.0
         version: 10.11.1(vue@3.5.13(typescript@5.7.2))
@@ -74,6 +77,9 @@ importers:
       vue:
         specifier: ^3.4.31
         version: 3.5.13(typescript@5.7.2)
+      vue-draggable-plus:
+        specifier: ^0.6.0
+        version: 0.6.0(@types/sortablejs@1.15.8)
       vue-i18n:
         specifier: ^9.13.1
         version: 9.14.2(vue@3.5.13(typescript@5.7.2))
@@ -332,6 +338,9 @@ importers:
       '@vue/server-renderer':
         specifier: ^3.5.13
         version: 3.5.13(vue@3.5.13(typescript@5.7.2))
+      adonis-lucid-filter:
+        specifier: ^5.2.0
+        version: 5.2.0(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@adonisjs/lucid@21.6.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@vinejs/vine@3.0.0)(luxon@3.5.0)(mysql2@3.12.0))(lodash@4.17.21)
       edge.js:
         specifier: ^6.2.0
         version: 6.2.0
@@ -362,7 +371,7 @@ importers:
         version: 1.4.0
       '@japa/assert':
         specifier: ^3.0.0
-        version: 3.0.0(@japa/runner@3.1.4)(openapi-types@1.3.4)
+        version: 3.0.0(@japa/runner@3.1.4)(openapi-types@12.1.3)
       '@japa/plugin-adonisjs':
         specifier: ^3.0.1
         version: 3.0.1(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@japa/runner@3.1.4)
@@ -1845,6 +1854,11 @@ packages:
     resolution: {integrity: sha512-m7X9U6BG2+J+R1lSOdCiITLLrxm+cWlNI3HUFA92oLO77ObGNzaKdh8pMLqdZcshtkKuV84olNNXDfMc4FezBQ==}
     engines: {node: '>=10'}
 
+  '@pinia/colada@0.13.2':
+    resolution: {integrity: sha512-anZCon5gr8UH517zui1NJfh5XPzi3Kyb+vaKW0CjTkHGhlEd4hudW7gLavhrfj5OiUjUwy17ZK7ornHRyon0dg==}
+    peerDependencies:
+      pinia: ^2.2.6
+
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
@@ -2245,6 +2259,9 @@ packages:
   '@types/qs@6.9.15':
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
 
+  '@types/sortablejs@1.15.8':
+    resolution: {integrity: sha512-b79830lW+RZfwaztgs1aVPgbasJ8e7AXtZYHTELNXZPsERt4ymJdjV4OccDbHQAvHrCcFpbF78jkm0R6h/pZVg==}
+
   '@types/svgo@2.6.4':
     resolution: {integrity: sha512-l4cmyPEckf8moNYHdJ+4wkHvFxjyW6ulm9l4YGaOxeyBWPhBOT0gvni1InpFPdzx1dKf/2s62qGITwxNWnPQng==}
 
@@ -2604,6 +2621,14 @@ packages:
     resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  adonis-lucid-filter@5.2.0:
+    resolution: {integrity: sha512-8Ey9ix6nBCL03R0VRiUI75/AR1Yb136/cXbVHtM2QlPn/pLhvfmwDSj5Wc/JxHyx1q1oNbSVLbcOzUOSzcCtkg==}
+    engines: {node: '>=20.6.0'}
+    peerDependencies:
+      '@adonisjs/core': ^6.2.3
+      '@adonisjs/lucid': ^21.1.0
+      lodash: ^4.17.21
 
   agent-base@7.1.3:
     resolution: {integrity: sha512-jRR5wdylq8CkOe6hei19GGZnxM6rBGwFl3Bg0YItGDimvjGtAvdZk4Pu6Cl4u4Igsws4a1fd1Vq3ezrhn4KmFw==}
@@ -5261,6 +5286,9 @@ packages:
   openapi-types@1.3.4:
     resolution: {integrity: sha512-h8rADpW3k/wepLdERKF0VKMAPdoFYNQCLGPmc/f8sgQ2dxUy+7sY4WAX2XDUDjhKTjbJVbxxofLkzy7f1/tE4g==}
 
+  openapi-types@12.1.3:
+    resolution: {integrity: sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw==}
+
   optionator@0.9.4:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
@@ -6815,6 +6843,15 @@ packages:
       '@vue/composition-api':
         optional: true
 
+  vue-draggable-plus@0.6.0:
+    resolution: {integrity: sha512-G5TSfHrt9tX9EjdG49InoFJbt2NYk0h3kgjgKxkFWr3ulIUays0oFObr5KZ8qzD4+QnhtALiRwIqY6qul4egqw==}
+    peerDependencies:
+      '@types/sortablejs': ^1.15.0
+      '@vue/composition-api': '*'
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+
   vue-eslint-parser@9.4.3:
     resolution: {integrity: sha512-2rYRLWlIpaiN8xbPiDyXZXRgLGOtWxERV7ND5fFAv5qo1D2N9Fu9MNajBNc6o13lZ+24DAWCkQCvj4klgmcITg==}
     engines: {node: ^14.17.0 || >=16.0.0}
@@ -7424,14 +7461,14 @@ snapshots:
 
   '@apidevtools/swagger-methods@3.0.2': {}
 
-  '@apidevtools/swagger-parser@10.0.3(openapi-types@1.3.4)':
+  '@apidevtools/swagger-parser@10.0.3(openapi-types@12.1.3)':
     dependencies:
       '@apidevtools/json-schema-ref-parser': 9.1.2
       '@apidevtools/openapi-schemas': 2.1.0
       '@apidevtools/swagger-methods': 3.0.2
       '@jsdevtools/ono': 7.1.3
       call-me-maybe: 1.0.2
-      openapi-types: 1.3.4
+      openapi-types: 12.1.3
       z-schema: 5.0.5
 
   '@arr/every@1.0.1': {}
@@ -8257,12 +8294,12 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@japa/assert@3.0.0(@japa/runner@3.1.4)(openapi-types@1.3.4)':
+  '@japa/assert@3.0.0(@japa/runner@3.1.4)(openapi-types@12.1.3)':
     dependencies:
       '@japa/runner': 3.1.4
       '@poppinss/macroable': 1.0.4
       '@types/chai': 4.3.20
-      api-contract-validator: 2.2.8(openapi-types@1.3.4)
+      api-contract-validator: 2.2.8(openapi-types@12.1.3)
       chai: 5.1.2
     transitivePeerDependencies:
       - openapi-types
@@ -8384,6 +8421,10 @@ snapshots:
       '@noble/hashes': 1.6.1
 
   '@phc/format@1.0.0': {}
+
+  '@pinia/colada@0.13.2(pinia@2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2)))':
+    dependencies:
+      pinia: 2.3.0(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -8740,6 +8781,8 @@ snapshots:
   '@types/pluralize@0.0.33': {}
 
   '@types/qs@6.9.15': {}
+
+  '@types/sortablejs@1.15.8': {}
 
   '@types/svgo@2.6.4':
     dependencies:
@@ -9309,6 +9352,13 @@ snapshots:
 
   acorn@8.14.0: {}
 
+  adonis-lucid-filter@5.2.0(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@adonisjs/lucid@21.6.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@vinejs/vine@3.0.0)(luxon@3.5.0)(mysql2@3.12.0))(lodash@4.17.21):
+    dependencies:
+      '@adonisjs/core': 6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0)
+      '@adonisjs/lucid': 21.6.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@adonisjs/core@6.17.0(@adonisjs/assembler@7.8.2(typescript@5.7.2))(@vinejs/vine@3.0.0)(edge.js@6.2.0))(@vinejs/vine@3.0.0)(luxon@3.5.0)(mysql2@3.12.0)
+      lodash: 4.17.21
+      type-fest: 4.31.0
+
   agent-base@7.1.3: {}
 
   ajv@6.12.6:
@@ -9347,9 +9397,9 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  api-contract-validator@2.2.8(openapi-types@1.3.4):
+  api-contract-validator@2.2.8(openapi-types@12.1.3):
     dependencies:
-      api-schema-builder: 2.0.11(openapi-types@1.3.4)
+      api-schema-builder: 2.0.11(openapi-types@12.1.3)
       chalk: 3.0.0
       columnify: 1.6.0
       jest-diff: 25.5.0
@@ -9361,7 +9411,7 @@ snapshots:
     transitivePeerDependencies:
       - openapi-types
 
-  api-schema-builder@2.0.11(openapi-types@1.3.4):
+  api-schema-builder@2.0.11(openapi-types@12.1.3):
     dependencies:
       ajv: 6.12.6
       clone-deep: 4.0.1
@@ -9370,7 +9420,7 @@ snapshots:
       json-schema-deref-sync: 0.14.0
       lodash.get: 4.4.2
       openapi-schema-validator: 3.0.3
-      swagger-parser: 10.0.3(openapi-types@1.3.4)
+      swagger-parser: 10.0.3(openapi-types@12.1.3)
     transitivePeerDependencies:
       - openapi-types
 
@@ -12202,6 +12252,8 @@ snapshots:
 
   openapi-types@1.3.4: {}
 
+  openapi-types@12.1.3: {}
+
   optionator@0.9.4:
     dependencies:
       deep-is: 0.1.4
@@ -13222,9 +13274,9 @@ snapshots:
       picocolors: 1.1.1
       stable: 0.1.8
 
-  swagger-parser@10.0.3(openapi-types@1.3.4):
+  swagger-parser@10.0.3(openapi-types@12.1.3):
     dependencies:
-      '@apidevtools/swagger-parser': 10.0.3(openapi-types@1.3.4)
+      '@apidevtools/swagger-parser': 10.0.3(openapi-types@12.1.3)
     transitivePeerDependencies:
       - openapi-types
 
@@ -13879,6 +13931,10 @@ snapshots:
   vue-demi@0.14.10(vue@3.5.13(typescript@5.7.2)):
     dependencies:
       vue: 3.5.13(typescript@5.7.2)
+
+  vue-draggable-plus@0.6.0(@types/sortablejs@1.15.8):
+    dependencies:
+      '@types/sortablejs': 1.15.8
 
   vue-eslint-parser@9.4.3(eslint@9.17.0(jiti@2.4.2)):
     dependencies:
