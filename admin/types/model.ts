@@ -9,7 +9,7 @@ export interface IUser {
   userId: string | number
   firstname: string
   lastname: string
-  fullName: string
+  fullname: string
   avatar: string
   email: string
   accountStatus?: DefaultStatus
@@ -135,7 +135,7 @@ export interface IFieldConfig {
 export interface IFieldOption extends SelectOption {
   label: string
   value: string
-  icon: string
+  icon: string | (() => string)
   show?: boolean
   schemas?: FormSchema[]
 }
