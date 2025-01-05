@@ -1,19 +1,32 @@
 <script setup lang="ts">
-import type { IBlockType, IField, IFieldConfig, IFieldOption } from '#/model';
+import type { IBasicCollectionType, IField, IFieldConfig, IFieldOption } from '#/model';
 import EditableText from '@/components/EditableText.vue';
 import type { FormSchema } from '@/components/FormBuilder';
+import { useNaiveHelper } from '@/composables/web/useNaiveHelper';
 import { $t } from '@/locales';
-import { NButton, NIcon, NText, type SelectGroupOption, type SelectOption } from 'naive-ui';
+import { DropdownDividerOption, DropdownGroupOption, DropdownOption, DropdownRenderOption, NButton, NIcon, NText, type SelectGroupOption, type SelectOption } from 'naive-ui';
 import { VueDraggable } from 'vue-draggable-plus';
 
+const mode = ref<'create' | 'update'>('create')
+const formData = ref<IBasicCollectionType>({
+  id: 0,
+  name: '',
+  description: '',
+  fields: [],
+  isActive: true,
+  createdAt: '',
+  updatedAt: ''
+})
 
-const emit = defineEmits(['update:fields'])
+const { loading } = withDefaults(defineProps<{
+  loading?: boolean
+}>(), {
+  loading: false
+})
 
-// const blockFormValue = ref<IBlockType>({
-//   title: '',
-//   description: '',
-//   fields: []
-// })
+const emit = defineEmits(['update:fields', 'submit', 'cancel', 'update:data'])
+
+const { renderIcon } = useNaiveHelper()
 
 /**
  * Extrait les valeurs par défaut des schémas pour créer la configuration initiale
@@ -50,9 +63,10 @@ const extractDefaultConfig = (schemas: FormSchema[]): IFieldConfig => {
  * Crée un nouveau champ avec ses schémas personnalisés
  * @param type - Le type de champ à créer
  * @param order - L'ordre du champ
- * @returns Le nouveau champ avec ses schémas et une configuration initiale
+ * @param isBase - Indique s'il s'agit d'un champ de base (non supprimable d'origine)
+ * @returns Le nouveau champ
  */
-const createField = (type: string, order: number): IField => {
+const createField = (type: string, order: number, isBase = false): IField => {
   const { baseSchemas, schemaGroups } = useFormSchemas()
   const { options } = useFieldOptions()
   
@@ -99,6 +113,14 @@ const createField = (type: string, order: number): IField => {
     title: fieldTypeLabel
   }
   
+  let canBeDeleted = !isBase
+  let canBeDuplicate = true
+
+  // Le champ slug ne peut pas être dupliqué
+  if (type === 'slug') {
+    canBeDuplicate = false
+  }
+
   return {
     order,
     type,
@@ -107,14 +129,51 @@ const createField = (type: string, order: number): IField => {
     required: false,
     options: [],
     config,
-    schemas
+    schemas,
+    canBeDeleted,
+    canBeDuplicate
   }
+}
+
+/**
+ * Génère les options du menu dropdown en tenant compte des propriétés
+ * canBeDeleted et canBeDuplicate du champ
+ * @param field - Le champ pour lequel générer les options
+ */
+const getFieldDropdownOptions = (field: IField) => {
+  return [
+    {
+      label: $t('button.duplicate'),
+      key: 'duplicate',
+      icon: () => renderIcon('i-tabler-copy'),
+      disabled: !field.canBeDuplicate,
+    },
+    {
+      label: $t('button.delete'),
+      key: 'delete',
+      icon: () => renderIcon('i-tabler-trash text-error'),
+      disabled: !field.canBeDeleted
+    }
+  ] as Array<DropdownOption | DropdownGroupOption | DropdownDividerOption | DropdownRenderOption>
 }
 
 // Composable pour la gestion des champs
 const useFields = () => {
   const fields = ref<IField[]>([])
   const currentField = ref<IField | null>(null)
+
+  const handleSelectFieldDropdown = async (key: 'duplicate' | 'delete', field: IField) => {
+    switch (key) {
+      case 'duplicate':
+        if (!field.canBeDuplicate) return
+        handleDuplicateField(field)
+        break
+      case 'delete':
+        if (!field.canBeDeleted) return
+        handleRemoveField(field)
+        break
+    }
+  }
 
   /**
    * Met à jour les schémas du champ avec les nouvelles valeurs de configuration
@@ -178,6 +237,21 @@ const useFields = () => {
     updateFieldSchemas(field, defaultValues)
   }
 
+  const handleDuplicateField = (field: IField) => {
+    const newField = createField(field.type, fields.value.length)
+    newField.config = { ...field.config }
+    fields.value.push(newField)
+    handleSelectField(newField)
+  }
+
+  const handleRemoveField = (field: IField) => {
+    const index = fields.value.findIndex(f => f.order === field.order)
+    fields.value.splice(index, 1)
+    if (fields.value.length > 0) {
+      handleSelectField(fields.value[0])
+    }
+  }
+
   const handleAddField = (type: string) => {
     const newField = createField(type, fields.value.length)
     initFieldSchemaValues(newField)
@@ -225,8 +299,8 @@ const useFields = () => {
   // Initialisation des champs par défaut
   const initializeDefaultFields = () => {
     const defaultFields = [
-      createField('plainText', 0),
-      createField('slug', 1)
+      createField('plainText', 0, true),
+      createField('slug', 1, true)
     ]
     
     defaultFields.forEach(field => {
@@ -260,25 +334,89 @@ const useFields = () => {
     currentField,
     handleAddField,
     handleSelectField,
-    handleUpdateConfig
+    handleUpdateConfig,
+    handleSelectFieldDropdown,
+    initializeDefaultFields,
   }
 }
 
 // Composable pour la gestion du modal
 const useModal = () => {
   const showModal = ref(false)
-  const modalTitle = ref($t('common.title'))
+  const modalTitle = ref('')
+  const titleInputRef = ref()
+  const { handleSelectField, fields, initializeDefaultFields } = useFields()
 
-  const handleShowModal = () => {
+  /**
+   * Affiche le modal et initialise les données si nécessaire
+   * @param data - Données optionnelles pour la modification
+   */
+  const handleShowModal = (data?: IBasicCollectionType) => {
     showModal.value = true
-    const { handleSelectField, fields } = useFields()
-    handleSelectField(fields.value[0])
+
+    if (data) {
+      // Mode modification
+      mode.value = 'update'
+      formData.value = { ...data }
+      modalTitle.value = data.name || $t('common.title')
+      
+      // Restaurer les champs existants
+      fields.value = data.fields
+      if (fields.value.length > 0) {
+        handleSelectField(fields.value[0])
+      }
+    } else {
+      // Mode création
+      mode.value = 'create'
+      formData.value = {
+        id: 0,
+        name: '',
+        description: '',
+        fields: [],
+        isActive: true,
+        createdAt: '',
+        updatedAt: ''
+      }
+      modalTitle.value = $t('form.builder.newBlock')
+      initializeDefaultFields()
+    }
+
+    // Déclencher l'édition du titre après l'affichage du modal
+    nextTick(() => {
+      titleInputRef.value?.handleStartEdit()
+    })
+  }
+
+  /**
+   * Gère la soumission du formulaire
+   */
+  const handleSubmit = () => {
+    formData.value.fields = fields.value
+    formData.value.name = modalTitle.value // Utilisation directe de la valeur sans formatage
+
+    if(mode.value == 'create') {
+      emit('submit', formData.value)
+    } else {
+      emit('update:data', formData.value)
+    }
+    showModal.value = false
+  }
+
+  /**
+   * Gère l'annulation
+   */
+  const handleCancel = () => {
+    emit('cancel')
+    showModal.value = false
   }
 
   return {
     showModal,
     modalTitle,
-    handleShowModal
+    titleInputRef,
+    handleShowModal,
+    handleSubmit,
+    handleCancel
   }
 }
 
@@ -547,8 +685,8 @@ const useFieldOptions = () => {
 }
 
 // Composition des composables
-const { showModal, modalTitle, handleShowModal } = useModal()
-const { fields, currentField, handleAddField, handleSelectField, handleUpdateConfig } = useFields()
+const { showModal, modalTitle, titleInputRef, handleShowModal, handleSubmit, handleCancel } = useModal()
+const { fields, currentField, handleSelectFieldDropdown, handleAddField, handleSelectField, handleUpdateConfig } = useFields()
 const { options, popselectOptions, renderLabel } = useFieldOptions()
 
 // Exposer les méthodes nécessaires
@@ -562,6 +700,7 @@ defineExpose({
     <template #header>
       <EditableText
         v-model="modalTitle"
+        ref="titleInputRef"
         container-class="!w-10rem"
         text-class="text-base font-medium"
         input-class="modal-title-input"
@@ -569,13 +708,24 @@ defineExpose({
     </template>
     <template #header-extra>
       <n-popselect :render-label="renderLabel" size="small" trigger="click" :options="popselectOptions" @update:value="handleAddField">
-        <n-icon class="cursor-pointer">
-          <i class="i-tabler-plus text-xl"/>
-        </n-icon>
+        <n-button type="primary" secondary>
+          {{ $t('common.actions.add') }}
+          <template #icon>
+            <n-icon>
+              <i class="i-tabler-text-plus text-xl"/>
+            </n-icon>
+          </template>
+        </n-button>
       </n-popselect>
     </template>
     <div>
-      <n-input type="textarea" size="small" placeholder="Description" class="w-full mb-2"/>
+      <n-input 
+        v-model:value="formData.description"
+        type="textarea" 
+        size="small" 
+        :placeholder="$t('form.description')" 
+        class="w-full mb-2"
+      />
     </div>
     <n-layout has-sider style="height: 20rem">
       <n-layout-sider bordered width="16rem" content-style="padding-inline: 12px; padding-block: 12px">
@@ -591,9 +741,11 @@ defineExpose({
               </n-button>
               <span >{{ field.config.title }}</span>
             </div>
-            <n-icon class="cursor-move">
-              <i class="i-tabler-grip-vertical"/>
-            </n-icon>
+            <n-dropdown placement="right" :options="getFieldDropdownOptions(field)" @select="(key) => handleSelectFieldDropdown(key, field)">
+              <n-icon class="cursor-move">
+                <i class="i-tabler-grip-vertical"/>
+              </n-icon>
+            </n-dropdown>
           </div>
         </VueDraggable>
       </n-layout-sider>
@@ -612,8 +764,12 @@ defineExpose({
     </n-layout>
     <template #action>
       <n-space justify="end" class="gap-2">
-        <n-button type="primary" secondary>{{ $t('button.cancel') }}</n-button>
-        <n-button type="primary">{{ $t('button.save') }}</n-button>
+        <n-button type="primary" :loading secondary @click="handleCancel">
+          {{ $t('button.cancel') }}
+        </n-button>
+        <n-button type="primary" :loading @click="handleSubmit">
+          {{ $t('button.save') }}
+        </n-button>
       </n-space>
     </template>
   </n-modal>
