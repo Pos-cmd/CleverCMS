@@ -32,7 +32,6 @@
     "./**/*.d.ts",
     "./**/*.tsx",
     "./**/*.vue",
-    "../typings/**/*.d.ts",
     "vite.config.ts"
   ],
   "exclude": ["node_modules", "dist", "**/*.js"]
