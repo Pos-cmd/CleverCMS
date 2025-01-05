@@ -1,50 +1,38 @@
 <script setup lang="ts">
-import { $t } from '@/locales';
-import FieldBuilder from '@/shared/modals/FieldBuilder.vue';
+import { useBlocks } from './index'
+import BlockSider from './components/BlockSider.vue'
+import BlockContent from './components/BlockContent.vue'
 
-const fieldBuilderRef = ref<InstanceType<typeof FieldBuilder> | null>(null)
+const { 
+  selectedKey, 
+  selectedBlock, 
+  blockTypeResult, 
+  isLoading, 
+  refetch,
+  searchValue,
+  handleSearch,
+  handleClearSearch,
+  handlePageChange 
+} = useBlocks()
 </script>
 
 <template>
   <PageWrapper>
     <n-layout has-sider position="absolute" style="height: 100%;">
-      <n-layout-sider bordered content-style="padding: 24px;" content-class="flex-center">
-        <n-empty :description="$t('page.blocks.emptyMessage')">
-          <template #extra>
-            <n-button type="primary" secondary @click="fieldBuilderRef?.handleShowModal()">
-              {{ $t('button.create.blocks') }}
-              <template #icon>
-                <n-icon>
-                  <i class="i-ph-stack-plus-bold"></i>
-                </n-icon>
-              </template>
-            </n-button>
-          </template>
-          <template #icon>
-            <n-icon>
-              <i class="i-ph-stack-duotone"></i>
-            </n-icon>
-          </template>
-        </n-empty>
-      </n-layout-sider>
-      <n-layout embedded>
-        <PageWrapper>
-          <ExceptionBase type="block" :description="$t('page.blocks.emptyMessage')">
-            <template #extra>
-              <n-button type="primary" @click="fieldBuilderRef?.handleShowModal()">
-                {{ $t('button.create.blocks') }}
-                <template #icon>
-                  <n-icon>
-                    <i class="i-ph-stack-plus-bold"></i>
-                  </n-icon>
-                </template>
-              </n-button>
-            </template>
-          </ExceptionBase>
-        </PageWrapper>
-      </n-layout>
+      <BlockSider
+        v-model:search-value="searchValue"
+        :selected-key="selectedKey"
+        :block-type-result="blockTypeResult"
+        :is-loading="isLoading"
+        @update:selected-key="(value) => selectedKey = value"
+        @update:search-value="(value) => searchValue = value"
+        @search="handleSearch"
+        @clear-search="handleClearSearch"
+        @page-change="handlePageChange"
+        @refetch="refetch"
+      />
+      <BlockContent :selected-block="selectedBlock" />
     </n-layout>
-    <FieldBuilder ref="fieldBuilderRef" />
   </PageWrapper>
 </template>
 
