@@ -75,6 +75,7 @@
     "@stouder-io/adonis-translatable": "^1.1.0",
     "@vinejs/vine": "^3.0.0",
     "@vue/server-renderer": "^3.5.13",
+    "adonis-lucid-filter": "^5.2.0",
     "edge.js": "^6.2.0",
     "luxon": "^3.5.0",
     "mysql2": "^3.12.0",
