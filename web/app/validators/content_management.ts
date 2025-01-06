@@ -144,7 +144,7 @@ export const createBlockTypeValidator = vine.compile(
   vine.object({
     name: vine.string().minLength(4).trim(),
     description: vine.string().nullable(),
-    fields: vine.object({}).allowUnknownProperties(),
+    fields: vine.array(vine.object({}).allowUnknownProperties()),
     isActive: vine.boolean(),
   })
 )
@@ -153,7 +153,7 @@ export const updateBlockTypeValidator = vine.compile(
   vine.object({
     name: vine.string().minLength(4).trim().optional().nullable(),
     description: vine.string().optional().nullable(),
-    fields: vine.object({}).allowUnknownProperties().optional().nullable(),
+    fields: vine.array(vine.object({}).allowUnknownProperties()).optional().nullable(),
     isActive: vine.boolean().optional().nullable(),
   })
 )

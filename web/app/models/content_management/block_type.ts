@@ -15,7 +15,10 @@ export default class BlockType extends compose(BaseModel, Filterable) {
   declare name: string
   @column()
   declare description: any
-  @column()
+  @column({
+    prepare: (value: any) => JSON.stringify(value),
+    // consume: (value: any) => JSON.parse(value),
+  })
   declare fields: any
   @column()
   declare isActive: boolean
