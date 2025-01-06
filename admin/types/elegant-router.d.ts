@@ -21,17 +21,19 @@ declare module "@elegant-router/types" {
     "404": "/404";
     "500": "/500";
     "account": "/account";
-    "blocks": "/blocks";
+    "content": "/content";
+    "content_blocks": "/content/blocks";
+    "content_menus": "/content/menus";
+    "content_pages": "/content/pages";
+    "content_sections": "/content/sections";
     "home": "/home";
     "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?";
-    "menus": "/menus";
     "notification": "/notification";
-    "pages": "/pages";
-    "permissions": "/permissions";
-    "roles": "/roles";
-    "sections": "/sections";
     "setting": "/setting";
-    "users": "/users";
+    "user": "/user";
+    "user_permissions": "/user/permissions";
+    "user_roles": "/user/roles";
+    "user_users": "/user/users";
   };
 
   /**
@@ -67,17 +69,12 @@ declare module "@elegant-router/types" {
     | "404"
     | "500"
     | "account"
-    | "blocks"
+    | "content"
     | "home"
     | "login"
-    | "menus"
     | "notification"
-    | "pages"
-    | "permissions"
-    | "roles"
-    | "sections"
     | "setting"
-    | "users"
+    | "user"
   >;
 
   /**
@@ -98,17 +95,17 @@ declare module "@elegant-router/types" {
     | "404"
     | "500"
     | "login"
-    | "blocks"
-    | "menus"
-    | "pages"
-    | "sections"
     | "account"
     | "notification"
     | "setting"
-    | "permissions"
-    | "roles"
-    | "users"
+    | "content_blocks"
+    | "content_menus"
+    | "content_pages"
+    | "content_sections"
     | "home"
+    | "user_permissions"
+    | "user_roles"
+    | "user_users"
   >;
 
   /**

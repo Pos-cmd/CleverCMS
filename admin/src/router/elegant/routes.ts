@@ -46,25 +46,66 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'account',
       i18nKey: 'route.account',
-      order: 98,
-      icon: 'ph:user-gear-duotone'
+      icon: 'ph:user-circle-gear-duotone',
+      order: 98
     }
   },
   {
-    name: 'blocks',
-    path: '/blocks',
-    component: 'layout.base$view.blocks',
+    name: 'content',
+    path: '/content',
+    component: 'layout.base',
     meta: {
-      title: 'blocks',
-      i18nKey: 'route.blocks',
-      icon: 'ph:stack-duotone',
-      order: 4,
-      group: {
-        name: 'content',
-        i18nKey: 'route.group.contentManagement',
-        order: 1
+      title: 'content',
+      i18nKey: 'route.content',
+      icon: 'ph:sidebar-duotone',
+      order: 2
+    },
+    children: [
+      {
+        name: 'content_blocks',
+        path: '/content/blocks',
+        component: 'view.content_blocks',
+        meta: {
+          title: 'content_blocks',
+          i18nKey: 'route.content_blocks',
+          order: 1,
+          icon: 'ph:stack-duotone'
+        }
+      },
+      {
+        name: 'content_menus',
+        path: '/content/menus',
+        component: 'view.content_menus',
+        meta: {
+          title: 'content_menus',
+          i18nKey: 'route.content_menus',
+          icon: 'ph:link-simple-duotone',
+          order: 3
+        }
+      },
+      {
+        name: 'content_pages',
+        path: '/content/pages',
+        component: 'view.content_pages',
+        meta: {
+          title: 'content_pages',
+          i18nKey: 'route.content_pages',
+          icon: 'ph:file-text-duotone',
+          order: 4
+        }
+      },
+      {
+        name: 'content_sections',
+        path: '/content/sections',
+        component: 'view.content_sections',
+        meta: {
+          title: 'content_sections',
+          i18nKey: 'route.content_sections',
+          icon: 'ph:newspaper-clipping-duotone',
+          order: 2
+        }
       }
-    }
+    ]
   },
   {
     name: 'home',
@@ -74,7 +115,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'home',
       i18nKey: 'route.home',
       icon: 'ph:desktop-duotone',
-      order: 1
+      order: 0
     }
   },
   {
@@ -90,22 +131,6 @@ export const generatedRoutes: GeneratedRoute[] = [
     }
   },
   {
-    name: 'menus',
-    path: '/menus',
-    component: 'layout.base$view.menus',
-    meta: {
-      title: 'menus',
-      i18nKey: 'route.menus',
-      icon: 'ph:link-simple-duotone',
-      order: 2,
-      group: {
-        name: 'content',
-        i18nKey: 'route.group.contentManagement',
-        order: 1
-      }
-    }
-  },
-  {
     name: 'notification',
     path: '/notification',
     component: 'layout.base$view.notification',
@@ -117,95 +142,60 @@ export const generatedRoutes: GeneratedRoute[] = [
     }
   },
   {
-    name: 'pages',
-    path: '/pages',
-    component: 'layout.base$view.pages',
-    meta: {
-      title: 'pages',
-      i18nKey: 'route.pages',
-      icon: 'ph:file-text-duotone',
-      order: 1,
-      group: {
-        name: 'content',
-        i18nKey: 'route.group.contentManagement',
-        order: 1
-      }
-    }
-  },
-  {
-    name: 'permissions',
-    path: '/permissions',
-    component: 'layout.base$view.permissions',
-    meta: {
-      title: 'permissions',
-      i18nKey: 'route.permissions',
-      icon: 'ph:key-duotone',
-      order: 3,
-      divider: true,
-      group: {
-        name: 'user',
-        i18nKey: 'route.group.userManagement',
-        order: 2
-      }
-    }
-  },
-  {
-    name: 'roles',
-    path: '/roles',
-    component: 'layout.base$view.roles',
-    meta: {
-      title: 'roles',
-      i18nKey: 'route.roles',
-      icon: 'ph:shield-duotone',
-      order: 2,
-      group: {
-        name: 'user',
-        i18nKey: 'route.group.userManagement',
-        order: 2
-      }
-    }
-  },
-  {
-    name: 'sections',
-    path: '/sections',
-    component: 'layout.base$view.sections',
-    meta: {
-      title: 'sections',
-      i18nKey: 'route.sections',
-      icon: 'ph:layout-duotone',
-      order: 3,
-      group: {
-        name: 'content',
-        i18nKey: 'route.group.contentManagement',
-        order: 1
-      }
-    }
-  },
-  {
     name: 'setting',
     path: '/setting',
     component: 'layout.base$view.setting',
     meta: {
       title: 'setting',
       i18nKey: 'route.setting',
-      icon: 'ph:gear-duotone',
+      icon: 'ph:gear-six-duotone',
       order: 99
     }
   },
   {
-    name: 'users',
-    path: '/users',
-    component: 'layout.base$view.users',
+    name: 'user',
+    path: '/user',
+    component: 'layout.base',
     meta: {
-      title: 'users',
-      i18nKey: 'route.users',
-      icon: 'ph:user-duotone',
-      order: 1,
-      group: {
-        name: 'user',
-        i18nKey: 'route.group.userManagement',
-        order: 2
+      title: 'user',
+      i18nKey: 'route.user',
+      icon: 'ph:address-book-duotone',
+      order: 3
+    },
+    children: [
+      {
+        name: 'user_permissions',
+        path: '/user/permissions',
+        component: 'view.user_permissions',
+        meta: {
+          title: 'user_permissions',
+          i18nKey: 'route.user_permissions',
+          icon: 'ph:key-duotone',
+          order: 3
+        }
+      },
+      {
+        name: 'user_roles',
+        path: '/user/roles',
+        component: 'view.user_roles',
+        meta: {
+          title: 'user_roles',
+          i18nKey: 'route.user_roles',
+          icon: 'ph:shield-duotone',
+          order: 2
+        }
+      },
+      {
+        name: 'user_users',
+        path: '/user/users',
+        component: 'view.user_users',
+        meta: {
+          title: 'user_users',
+          i18nKey: 'route.user_users',
+          icon: 'ph:users-duotone',
+          order: 1
+        }
       }
-    }
+    ]
   }
 ];

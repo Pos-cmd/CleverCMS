@@ -167,17 +167,19 @@ const routeMap: RouteMap = {
   "404": "/404",
   "500": "/500",
   "account": "/account",
-  "blocks": "/blocks",
+  "content": "/content",
+  "content_blocks": "/content/blocks",
+  "content_menus": "/content/menus",
+  "content_pages": "/content/pages",
+  "content_sections": "/content/sections",
   "home": "/home",
   "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?",
-  "menus": "/menus",
   "notification": "/notification",
-  "pages": "/pages",
-  "permissions": "/permissions",
-  "roles": "/roles",
-  "sections": "/sections",
   "setting": "/setting",
-  "users": "/users"
+  "user": "/user",
+  "user_permissions": "/user/permissions",
+  "user_roles": "/user/roles",
+  "user_users": "/user/users"
 };
 
 /**
