@@ -24,17 +24,17 @@ interface IToggleTypeAndLabel {
 }
 
 const getToggleTypeAndLabel = (isActive: boolean | undefined): IToggleTypeAndLabel => {
-  if (isActive) {
+  if (!isActive) {
     return {
       type: 'warning',
       icon: 'i-tabler-toggle-left',
-      tooltip: $t('common.actions.disable')
+      tooltip: $t('common.actions.enable')
     }
   }
   return {
     type: 'success',
     icon: 'i-tabler-toggle-right',
-    tooltip: $t('common.actions.enable')
+    tooltip: $t('common.actions.disable')
   }
 }
 </script>
@@ -83,9 +83,10 @@ const getToggleTypeAndLabel = (isActive: boolean | undefined): IToggleTypeAndLab
           </n-button>
         </n-space>
       </template>
+      <!-- <pre>{{ computedSelectedBlock?.fields }}</pre> -->
       <ExceptionBase type="block" :description="$t('page.blocks.items.emptyMessage', { name: computedSelectedBlock?.name })">
         <template v-if="computedSelectedBlock?.name" #extra>
-          <n-button type="primary" @click="fieldFormRef?.handleOpenDrawer()">
+          <n-button type="primary" @click="fieldFormRef?.handleOpenDrawer(computedSelectedBlock?.fields)">
             {{ $t('button.create.item') }}
             <template #icon>
               <n-icon>

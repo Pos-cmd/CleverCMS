@@ -1,9 +1,9 @@
-import { ref, watch, onMounted } from 'vue'
-import type { IField, IFieldConfig } from '#/model'
+import type { IField, IFieldConfig, IFieldOption } from '#/model'
 import type { FormSchema } from '@/components/FormBuilder'
 import { $t } from '@/locales'
-import { useFormSchemas } from './useFormSchema'
+import { onMounted, ref, watch } from 'vue'
 import { useFieldOptions } from './useFieldOptions'
+import { useFormSchemas } from './useFormSchema'
 
 /**
  * Extrait les valeurs par défaut des schémas pour créer la configuration initiale
@@ -98,22 +98,25 @@ const createField = (type: string, order: number, isBase = false): IField => {
     canBeDuplicate = false
   }
 
+  console.log({ option: options[type] })
+
   return {
     order,
-    type,
-    label: config.title,
-    name: `field_${order}`,
-    required: false,
-    options: [],
+    // type,
+    // label: config.title,
+    // options: [],
+    ...options[type],
     config,
-    schemas,
+    type,
     canBeDeleted,
-    canBeDuplicate
+    canBeDuplicate,
+    required: false,
+    field: `field_${order}`,
   }
 }
 
+const fields = ref<IField[]>([])
 export const useFields = (emit: any) => {
-  const fields = ref<IField[]>([])
   const currentField = ref<IField | null>(null)
 
   const handleSelectFieldDropdown = async (key: 'duplicate' | 'delete', field: IField) => {
@@ -229,7 +232,7 @@ export const useFields = (emit: any) => {
       .filter(f => f.type === 'plainText')
       .map(f => ({
         label: f.config.title || f.label,
-        value: f.name
+        value: f.field
       }))
 
     fields.value.forEach(field => {

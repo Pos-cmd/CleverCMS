@@ -1,6 +1,5 @@
 import { FormSchema } from '@/components/FormBuilder'
 import { DefaultStatus } from '@/enums/default_status'
-import { SelectOption } from 'naive-ui'
 
 /**
  * @description: User info interface
@@ -132,7 +131,7 @@ export interface IFieldConfig {
   baseField?: string // Champ pour stocker la référence au champ plainText source
 }
 
-export interface IFieldOption extends SelectOption {
+export interface IFieldOption extends FormSchema {
   label: string
   value: string
   icon: string | (() => string)
@@ -144,9 +143,9 @@ export interface IField {
   order: number
   type: string
   label: string
-  name: string
+  field: string
   required: boolean
-  options: any[]
+  // options: any[]
   isEditing?: boolean
   config: IFieldConfig
   canBeDuplicate?: boolean

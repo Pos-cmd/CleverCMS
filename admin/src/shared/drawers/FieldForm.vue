@@ -1,8 +1,14 @@
 <script setup lang="ts">
-const showDrawer = ref(false)
+import { FormSchema } from '@/components/FormBuilder';
 
-const handleOpenDrawer = () => {
+const showDrawer = ref(false)
+const formData = ref({})
+
+const schemas = ref<FormSchema[]>([])
+
+const handleOpenDrawer = (formSchemas: FormSchema[]) => {
   showDrawer.value = true
+  schemas.value = formSchemas
 }
 
 defineExpose({
@@ -14,7 +20,13 @@ defineExpose({
 <template>
    <n-drawer v-model:show="showDrawer" :width="502">
     <n-drawer-content title="Stoner">
-      Stoner is a 1965 novel by the American writer John Williams.
+      <!-- <pre>{{ schemas }}</pre> -->
+      <FormBuilder :schemas :showActionButtonGroup="false"/>
+      <template #footer>
+        <n-space justify="end">
+          <n-button type="primary" @click="showDrawer = false">{{ $t('button.save') }}</n-button>
+        </n-space>
+      </template>
     </n-drawer-content>
   </n-drawer>
 </template>

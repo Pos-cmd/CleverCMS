@@ -13,17 +13,19 @@ export const useFormSchemas = () => {
     },
     description: {
       field: 'description',
-      component: 'NInputTextarea',
+      component: 'NInput',
       label: $t('form.description'),
+      componentProps: {
+        type: 'textarea',
+      },
       formItemProps: { class: 'mb-3' }
     },
     required: {
       field: 'required',
       component: 'SwitchTab',
       label: $t('form.isRequired'),
-      // required: true,
       componentProps: {
-        modelValue: 'true',
+        modelValue: 'false',
         size: 'small',
         tabs: [
           { value: 'true', label: $t('common.yes') },

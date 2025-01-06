@@ -3,20 +3,21 @@ import type { IBasicCollectionType } from '#/model'
 import { $t } from '@/locales'
 import { useFields } from './useFields'
 
+const formData = ref<IBasicCollectionType>({
+  id: 0,
+  name: '',
+  description: '',
+  fields: [],
+  isActive: true,
+  createdAt: '',
+  updatedAt: ''
+})
 export const useModal = (emit: any) => {
   const showModal = ref(false)
   const modalTitle = ref('')
   const titleInputRef = ref()
   const mode = ref<'create' | 'update'>('create')
-  const formData = ref<IBasicCollectionType>({
-    id: 0,
-    name: '',
-    description: '',
-    fields: [],
-    isActive: true,
-    createdAt: '',
-    updatedAt: ''
-  })
+
 
   const { handleSelectField, fields, initializeDefaultFields } = useFields(emit)
 
@@ -26,8 +27,9 @@ export const useModal = (emit: any) => {
    */
   const handleShowModal = (data?: IBasicCollectionType) => {
     showModal.value = true
-
+    
     if (data) {
+      console.log('handleShowModal', data)
       mode.value = 'update'
       formData.value = { ...data }
       modalTitle.value = data.name || $t('common.title')
